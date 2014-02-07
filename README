@@ -1,0 +1,15 @@
+VOS Alpha 0.1.5
+
+(C) Chris de Jong / dducks / warranty_voids - 2014
+
+How to build:
+
+  make
+  make simulate
+
+More information:
+  http://hackrants.blogspot.com
+  http://github.com/warrantyvoids/VOS
+  irc.freenode.net #oszero
+
+GPL license, see LICENSE.
