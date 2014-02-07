@@ -133,68 +133,80 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00032"></a>00032   <a class="code" href="terminal_8c.html#a0e77ef8710654966af44f69becffcd80">terminal_putchar</a>(<span class="charliteral">&#39;\n&#39;</span>);
 <a name="l00033"></a>00033 }
 <a name="l00034"></a>00034 
-<a name="l00035"></a>00035 <span class="keyword">static</span> <span class="keywordtype">void</span> timer_interrupt( isr_args_t args ) {
-<a name="l00036"></a>00036   <span class="keyword">static</span> uint32_t timerval = 0;
-<a name="l00037"></a>00037   <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;Timer &quot;</span>);
-<a name="l00038"></a>00038   <a class="code" href="terminal_8c.html#a95fe4654de845eab958ed3d887a5e0fd">terminal_writehex</a>(timerval++);
-<a name="l00039"></a>00039   <a class="code" href="terminal_8c.html#a0e77ef8710654966af44f69becffcd80">terminal_putchar</a>(<span class="charliteral">&#39;\n&#39;</span>);
-<a name="l00040"></a>00040 }
-<a name="l00041"></a>00041  
-<a name="l00042"></a>00042 <span class="preprocessor">#if defined(__cplusplus)</span>
-<a name="l00043"></a>00043 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="comment">/* Use C linkage for kernel_main. */</span>
-<a name="l00044"></a>00044 <span class="preprocessor">#endif</span>
-<a name="l00045"></a><a class="code" href="kernel_8c.html#ada8402e0c504af8cafef5cc76c076003">00045</a> <span class="preprocessor"></span><span class="keywordtype">void</span> <a class="code" href="kernel_8c.html#ada8402e0c504af8cafef5cc76c076003">kernel_main</a>()
-<a name="l00046"></a>00046 {
-<a name="l00047"></a>00047         <a class="code" href="arch_8h.html#ac7822942818a3fe169790e65205d9882">arch_entry</a>();
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049         <a class="code" href="terminal_8c.html#afe0aea39aa0900026a6e571921ca19ff">terminal_initialize</a>();
-<a name="l00050"></a>00050         <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;Kernel initialized.\n&quot;</span>);
-<a name="l00051"></a>00051         <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;VGA Enabled!\n&quot;</span>);
-<a name="l00052"></a>00052      
-<a name="l00053"></a>00053 <span class="comment">//        isr_set_handler(3, &amp;timer_interrupt);        </span>
-<a name="l00054"></a>00054         <a class="code" href="arch_8h.html#a9ba2d927c0c6705b4514d0c7c6ebb1eb">isr_set_handler</a>(<a class="code" href="pit_8h.html#a85fc66e3edd4ed6a4db6e455feaba8ca">IRQ_TIMER</a>, &amp;timer_interrupt);
-<a name="l00055"></a>00055         <a class="code" href="arch_8h.html#a9ba2d927c0c6705b4514d0c7c6ebb1eb">isr_set_handler</a>(0x0D, &amp;protection_fault);
-<a name="l00056"></a>00056         <a class="code" href="arch_8h.html#a9ba2d927c0c6705b4514d0c7c6ebb1eb">isr_set_handler</a>(0x08, &amp;double_fault);
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058         <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;ISR Initialized...\n&quot;</span>);
+<a name="l00035"></a>00035 <span class="keyword">static</span> <span class="keywordtype">void</span> int_hang ( isr_args_t args ) {
+<a name="l00036"></a>00036   <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;Stopping. Recieved int &quot;</span>);
+<a name="l00037"></a>00037   <a class="code" href="terminal_8c.html#acc8f6cfc190914a5344dc3314aedfcff">terminal_writehexdigits</a>(args.interrupt_id);
+<a name="l00038"></a>00038   <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot; with error code &quot;</span>);
+<a name="l00039"></a>00039   <a class="code" href="terminal_8c.html#a95fe4654de845eab958ed3d887a5e0fd">terminal_writehex</a>(args.error_code);
+<a name="l00040"></a>00040   <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;.\n&quot;</span>);
+<a name="l00041"></a>00041   
+<a name="l00042"></a>00042   <span class="keywordflow">while</span> (1);
+<a name="l00043"></a>00043 }
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045 <span class="keyword">static</span> <span class="keywordtype">void</span> timer_interrupt( isr_args_t args ) {
+<a name="l00046"></a>00046   <span class="keyword">static</span> uint32_t timerval = 0;
+<a name="l00047"></a>00047   <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;Timer &quot;</span>);
+<a name="l00048"></a>00048   <a class="code" href="terminal_8c.html#a95fe4654de845eab958ed3d887a5e0fd">terminal_writehex</a>(timerval++);
+<a name="l00049"></a>00049   <a class="code" href="terminal_8c.html#a0e77ef8710654966af44f69becffcd80">terminal_putchar</a>(<span class="charliteral">&#39;\n&#39;</span>);
+<a name="l00050"></a>00050   <a class="code" href="apic_8c.html#a5c1c678e314c1796b3f04b59f0507a38">apic_send_eoi</a>();
+<a name="l00051"></a>00051 }
+<a name="l00052"></a>00052  
+<a name="l00053"></a>00053 <span class="preprocessor">#if defined(__cplusplus)</span>
+<a name="l00054"></a>00054 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="comment">/* Use C linkage for kernel_main. */</span>
+<a name="l00055"></a>00055 <span class="preprocessor">#endif</span>
+<a name="l00056"></a><a class="code" href="kernel_8c.html#ada8402e0c504af8cafef5cc76c076003">00056</a> <span class="preprocessor"></span><span class="keywordtype">void</span> <a class="code" href="kernel_8c.html#ada8402e0c504af8cafef5cc76c076003">kernel_main</a>()
+<a name="l00057"></a>00057 {
+<a name="l00058"></a>00058         <a class="code" href="arch_8h.html#ac7822942818a3fe169790e65205d9882">arch_entry</a>();
 <a name="l00059"></a>00059 
-<a name="l00060"></a>00060         isr_enable();
-<a name="l00061"></a>00061         
-<a name="l00062"></a>00062         <a class="code" href="arch_8h.html#a42ace81c89978597115689472c5d63e8">arch_init</a>();
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064         <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;Init survived...\n&quot;</span>);
-<a name="l00065"></a>00065         
-<a name="l00066"></a>00066         <a class="code" href="arch_8h.html#ac809c0d64d88725a9771cc5e6b446133">arch_postinit</a>();
-<a name="l00067"></a>00067         
-<a name="l00068"></a>00068         <span class="comment">/* Since there is no support for newlines in terminal_putchar yet, \n will</span>
-<a name="l00069"></a>00069 <span class="comment">           produce some VGA specific character instead. This is normal. */</span>
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071         <span class="keywordtype">char</span> cpuvend [14];
-<a name="l00072"></a>00072         cpuvend[12] = <span class="charliteral">&#39;\n&#39;</span>;
-<a name="l00073"></a>00073         cpuvend[13] = <span class="charliteral">&#39;\0&#39;</span>;        
-<a name="l00074"></a>00074         
-<a name="l00075"></a>00075         cpuid_vendor(cpuvend);
-<a name="l00076"></a>00076         <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(cpuvend);
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078         <span class="keywordflow">if</span> (<a class="code" href="apic_8c.html#a5d6f59e6b4b73693b36977d85c19acd7">apic_is_available</a>()) {
-<a name="l00079"></a>00079           <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;ACPI Available!\n&quot;</span>);
-<a name="l00080"></a>00080         } <span class="keywordflow">else</span> {
-<a name="l00081"></a>00081           <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;No ACPI!\n&quot;</span>);
-<a name="l00082"></a>00082         }
-<a name="l00083"></a>00083         
-<a name="l00084"></a>00084 
-<a name="l00085"></a>00085         <span class="keyword">asm</span> <span class="keyword">volatile</span> (<span class="stringliteral">&quot; int $0x01 &quot;</span>);
-<a name="l00086"></a>00086 <span class="comment">//      asm volatile (&quot; int $0x04 &quot;);</span>
-<a name="l00087"></a>00087         
-<a name="l00088"></a>00088 <span class="comment">//      uint32_t rax, rdx;</span>
-<a name="l00089"></a>00089 <span class="comment">//      asm volatile (&quot; rdmsr &quot; : &quot;=a&quot;(rax), &quot;=d&quot;(rdx) : &quot;c&quot;(0x1B) );</span>
-<a name="l00090"></a>00090         
-<a name="l00091"></a>00091 <span class="comment">//      terminal_writestring(&quot;RDMSR 0x1B:\n&quot;);</span>
-<a name="l00092"></a>00092 <span class="comment">//      terminal_writehex(rax); terminal_putchar(&#39;\n&#39;);</span>
-<a name="l00093"></a>00093 <span class="comment">//      terminal_writehex(rdx); terminal_putchar(&#39;\n&#39;);</span>
-<a name="l00094"></a>00094                 
-<a name="l00095"></a>00095         <span class="keywordflow">while</span> (1);
-<a name="l00096"></a>00096 }
+<a name="l00060"></a>00060         <a class="code" href="terminal_8c.html#afe0aea39aa0900026a6e571921ca19ff">terminal_initialize</a>();
+<a name="l00061"></a>00061         <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;Kernel initialized.\n&quot;</span>);
+<a name="l00062"></a>00062         <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;VGA Enabled!\n&quot;</span>);
+<a name="l00063"></a>00063      
+<a name="l00064"></a>00064 <span class="comment">//        isr_set_handler(3, &amp;timer_interrupt);        </span>
+<a name="l00065"></a>00065         <a class="code" href="arch_8h.html#a9ba2d927c0c6705b4514d0c7c6ebb1eb">isr_set_handler</a>(<a class="code" href="pit_8h.html#a85fc66e3edd4ed6a4db6e455feaba8ca">IRQ_TIMER</a>, &amp;timer_interrupt);
+<a name="l00066"></a>00066         <a class="code" href="arch_8h.html#a9ba2d927c0c6705b4514d0c7c6ebb1eb">isr_set_handler</a>(0x0D, &amp;protection_fault);
+<a name="l00067"></a>00067         <a class="code" href="arch_8h.html#a9ba2d927c0c6705b4514d0c7c6ebb1eb">isr_set_handler</a>(0x08, &amp;double_fault);
+<a name="l00068"></a>00068         <a class="code" href="arch_8h.html#a9ba2d927c0c6705b4514d0c7c6ebb1eb">isr_set_handler</a>(0x06, &amp;int_hang );
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070         <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;ISR Initialized...\n&quot;</span>);
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072         isr_enable();
+<a name="l00073"></a>00073         
+<a name="l00074"></a>00074         <a class="code" href="arch_8h.html#a42ace81c89978597115689472c5d63e8">arch_init</a>();
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076         <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;Init survived...\n&quot;</span>);
+<a name="l00077"></a>00077         
+<a name="l00078"></a>00078         <a class="code" href="arch_8h.html#ac809c0d64d88725a9771cc5e6b446133">arch_postinit</a>();
+<a name="l00079"></a>00079         
+<a name="l00080"></a>00080         <span class="comment">/* Since there is no support for newlines in terminal_putchar yet, \n will</span>
+<a name="l00081"></a>00081 <span class="comment">           produce some VGA specific character instead. This is normal. */</span>
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083         <span class="keywordtype">char</span> cpuvend [14];
+<a name="l00084"></a>00084         cpuvend[12] = <span class="charliteral">&#39;\n&#39;</span>;
+<a name="l00085"></a>00085         cpuvend[13] = <span class="charliteral">&#39;\0&#39;</span>;        
+<a name="l00086"></a>00086         
+<a name="l00087"></a>00087         cpuid_vendor(cpuvend);
+<a name="l00088"></a>00088         <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(cpuvend);
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090         <span class="keywordflow">if</span> (<a class="code" href="apic_8c.html#a5d6f59e6b4b73693b36977d85c19acd7">apic_is_available</a>()) {
+<a name="l00091"></a>00091           <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;ACPI Available!\n&quot;</span>);
+<a name="l00092"></a>00092         } <span class="keywordflow">else</span> {
+<a name="l00093"></a>00093           <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;No ACPI!\n&quot;</span>);
+<a name="l00094"></a>00094         }
+<a name="l00095"></a>00095         
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097 <span class="comment">//      asm volatile (&quot; int $0x01 &quot;);</span>
+<a name="l00098"></a>00098 <span class="comment">//      asm volatile (&quot; int $0x04 &quot;);</span>
+<a name="l00099"></a>00099         
+<a name="l00100"></a>00100 <span class="comment">//      uint32_t rax, rdx;</span>
+<a name="l00101"></a>00101 <span class="comment">//      asm volatile (&quot; rdmsr &quot; : &quot;=a&quot;(rax), &quot;=d&quot;(rdx) : &quot;c&quot;(0x1B) );</span>
+<a name="l00102"></a>00102         
+<a name="l00103"></a>00103 <span class="comment">//      terminal_writestring(&quot;RDMSR 0x1B:\n&quot;);</span>
+<a name="l00104"></a>00104 <span class="comment">//      terminal_writehex(rax); terminal_putchar(&#39;\n&#39;);</span>
+<a name="l00105"></a>00105 <span class="comment">//      terminal_writehex(rdx); terminal_putchar(&#39;\n&#39;);</span>
+<a name="l00106"></a>00106                 
+<a name="l00107"></a>00107         <span class="keywordflow">while</span> (1);
+<a name="l00108"></a>00108 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -215,7 +227,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="kernel_8c.html">kernel.c</a>      </li>
 
-    <li class="footer">Generated on Fri Feb 7 2014 08:36:21 for VOS by
+    <li class="footer">Generated on Fri Feb 7 2014 11:19:37 for VOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

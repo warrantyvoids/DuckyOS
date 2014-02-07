@@ -115,49 +115,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00014"></a>00014 
 <a name="l00015"></a>00015   <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;APIC_INIT.\n&quot;</span>);
 <a name="l00016"></a>00016 
-<a name="l00017"></a>00017   uint16_t * screen = <a class="code" href="paging_8c.html#a38bb0b6b2b72902e128584677e71604a">paging_map</a>((<span class="keywordtype">void</span>*)0xB8000, <a class="code" href="paging_8h.html#a803d82c60dc7fab81b616eba6c6bdf99">PAGING_READWRITE</a>);
-<a name="l00018"></a>00018   <a class="code" href="terminal_8c.html#a95fe4654de845eab958ed3d887a5e0fd">terminal_writehex</a>((uint32_t)screen);
-<a name="l00019"></a>00019   screen[60] = <span class="charliteral">&#39;T&#39;</span>;
-<a name="l00020"></a>00020   screen[61] = <span class="charliteral">&#39;E&#39;</span>;
-<a name="l00021"></a>00021   screen[62] = <span class="charliteral">&#39;S&#39;</span>;
-<a name="l00022"></a>00022   screen[63] = <span class="charliteral">&#39;T&#39;</span>;
-<a name="l00023"></a>00023   <span class="keywordflow">return</span>;
-<a name="l00024"></a>00024   
-<a name="l00025"></a>00025   <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;First MEMMAP!\n&quot;</span>);
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027   apic = 0;
-<a name="l00028"></a>00028   <span class="keywordflow">if</span> (<a class="code" href="apic_8c.html#a5d6f59e6b4b73693b36977d85c19acd7">apic_is_available</a>()) {
-<a name="l00029"></a>00029     <span class="keywordflow">return</span>;
-<a name="l00030"></a>00030   }
-<a name="l00031"></a>00031   
-<a name="l00032"></a>00032   uint64_t msr = rdmsr(<a class="code" href="apic_8h.html#addaf808a2370b5a646905880131e5334">APIC_MSR</a>);
-<a name="l00033"></a>00033   uint32_t base_addr = msr &amp; 0xFFFFF000;
-<a name="l00034"></a>00034   
-<a name="l00035"></a>00035   apic = <a class="code" href="paging_8c.html#a38bb0b6b2b72902e128584677e71604a">paging_map</a>((<span class="keywordtype">void</span>*)base_addr, <a class="code" href="paging_8h.html#a803d82c60dc7fab81b616eba6c6bdf99">PAGING_READWRITE</a> | <a class="code" href="paging_8h.html#a91f842d4b5ee904f5c4250b972d246fd">PAGING_CACHE_DISABLE</a>);
-<a name="l00036"></a>00036   
-<a name="l00037"></a>00037   <span class="comment">//Well, now we know where it&#39;s mapped, lets reset it.</span>
-<a name="l00038"></a>00038   apic-&gt;destination_format_model = 0x0F;
-<a name="l00039"></a>00039   apic-&gt;logical_destination = 01;
-<a name="l00040"></a>00040   apic-&gt;lvt_timer.mask = 1; <span class="comment">// &lt;- disable ALL interrupts</span>
-<a name="l00041"></a>00041   apic-&gt;lvt_therm.mask = 1;
-<a name="l00042"></a>00042   apic-&gt;lvt_lint0.mask = 1;
-<a name="l00043"></a>00043   apic-&gt;lvt_lint1.mask = 1;
-<a name="l00044"></a>00044   apic-&gt;lvt_error.mask = 1;
-<a name="l00045"></a>00045   
-<a name="l00046"></a>00046   apic-&gt;tpr.priority = 0;
-<a name="l00047"></a>00047   
-<a name="l00048"></a>00048   msr |= (1 &lt;&lt; 11);
-<a name="l00049"></a>00049   wrmsr(msr, <a class="code" href="apic_8h.html#addaf808a2370b5a646905880131e5334">APIC_MSR</a>);
-<a name="l00050"></a>00050   
-<a name="l00051"></a>00051   <span class="comment">//We ready nauw.</span>
-<a name="l00052"></a>00052   apic-&gt;spurious_int_vector = 39;
-<a name="l00053"></a>00053   apic-&gt;enabled = 1;
-<a name="l00054"></a>00054   apic-&gt;lvt_timer.vector = 34;
-<a name="l00055"></a>00055   apic-&gt;lvt_timer.mode = 1; <span class="comment">// Periodic</span>
-<a name="l00056"></a>00056   apic-&gt;divisor = 0b1010;
-<a name="l00057"></a>00057   <span class="comment">//apic-&gt;lvt_timer.mask = 0; //GO!</span>
-<a name="l00058"></a>00058   
-<a name="l00059"></a>00059 }
+<a name="l00017"></a>00017   apic = 0;
+<a name="l00018"></a>00018   <span class="keywordflow">if</span> (!<a class="code" href="apic_8c.html#a5d6f59e6b4b73693b36977d85c19acd7">apic_is_available</a>()) {
+<a name="l00019"></a>00019     <span class="keywordflow">return</span>;
+<a name="l00020"></a>00020   }
+<a name="l00021"></a>00021   
+<a name="l00022"></a>00022   uint64_t msr = rdmsr(<a class="code" href="apic_8h.html#addaf808a2370b5a646905880131e5334">APIC_MSR</a>);
+<a name="l00023"></a>00023   uint32_t base_addr = msr &amp; 0xFFFFF000;
+<a name="l00024"></a>00024   <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;APIC Base Address: &quot;</span>);
+<a name="l00025"></a>00025   <a class="code" href="terminal_8c.html#a95fe4654de845eab958ed3d887a5e0fd">terminal_writehex</a>(base_addr);
+<a name="l00026"></a>00026   <a class="code" href="terminal_8c.html#a0e77ef8710654966af44f69becffcd80">terminal_putchar</a>(<span class="charliteral">&#39;\n&#39;</span>);
+<a name="l00027"></a>00027   
+<a name="l00028"></a>00028   apic = <a class="code" href="paging_8c.html#a38bb0b6b2b72902e128584677e71604a">paging_map</a>((<span class="keywordtype">void</span>*)base_addr, <a class="code" href="paging_8h.html#a803d82c60dc7fab81b616eba6c6bdf99">PAGING_READWRITE</a> | <a class="code" href="paging_8h.html#a91f842d4b5ee904f5c4250b972d246fd">PAGING_CACHE_DISABLE</a>);
+<a name="l00029"></a>00029   <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;APIC Virt Address: &quot;</span>);
+<a name="l00030"></a>00030   <a class="code" href="terminal_8c.html#a95fe4654de845eab958ed3d887a5e0fd">terminal_writehex</a>((uint32_t)apic);
+<a name="l00031"></a>00031   <a class="code" href="terminal_8c.html#a0e77ef8710654966af44f69becffcd80">terminal_putchar</a>(<span class="charliteral">&#39;\n&#39;</span>);
+<a name="l00032"></a>00032   <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;APIC Version: &quot;</span>);
+<a name="l00033"></a>00033   <a class="code" href="terminal_8c.html#acc8f6cfc190914a5344dc3314aedfcff">terminal_writehexdigits</a>(apic-&gt;version);
+<a name="l00034"></a>00034   <a class="code" href="terminal_8c.html#a0e77ef8710654966af44f69becffcd80">terminal_putchar</a>(<span class="charliteral">&#39;\n&#39;</span>);
+<a name="l00035"></a>00035   
+<a name="l00036"></a>00036   <span class="comment">//Well, now we know where it&#39;s mapped, lets reset it.</span>
+<a name="l00037"></a>00037   apic-&gt;destination_format_model = 0x0F;
+<a name="l00038"></a>00038   apic-&gt;logical_destination = 01;
+<a name="l00039"></a>00039   apic-&gt;lvt_timer.mask = 1; <span class="comment">// &lt;- disable ALL interrupts</span>
+<a name="l00040"></a>00040   apic-&gt;lvt_therm.mask = 1;
+<a name="l00041"></a>00041   apic-&gt;lvt_lint0.mask = 1;
+<a name="l00042"></a>00042   apic-&gt;lvt_lint1.mask = 1;
+<a name="l00043"></a>00043   apic-&gt;lvt_error.mask = 1;
+<a name="l00044"></a>00044   
+<a name="l00045"></a>00045   apic-&gt;eoi_broadcast_suppression = 1;
+<a name="l00046"></a>00046   
+<a name="l00047"></a>00047   apic-&gt;tpr.priority = 0;
+<a name="l00048"></a>00048   
+<a name="l00049"></a>00049   msr |= (1 &lt;&lt; 11);
+<a name="l00050"></a>00050   wrmsr(<a class="code" href="apic_8h.html#addaf808a2370b5a646905880131e5334">APIC_MSR</a>, msr);
+<a name="l00051"></a>00051   <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;APIC MSR val: &quot;</span>);
+<a name="l00052"></a>00052   <a class="code" href="terminal_8c.html#a95fe4654de845eab958ed3d887a5e0fd">terminal_writehex</a>(msr); <a class="code" href="terminal_8c.html#a95fe4654de845eab958ed3d887a5e0fd">terminal_writehex</a>(msr&gt;&gt;32);
+<a name="l00053"></a>00053   <a class="code" href="terminal_8c.html#a0e77ef8710654966af44f69becffcd80">terminal_putchar</a>(<span class="charliteral">&#39;\n&#39;</span>);
+<a name="l00054"></a>00054   
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056   uint32_t <span class="keyword">volatile</span> * apicraw = (uint32_t <span class="keyword">volatile</span> *) apic;
+<a name="l00057"></a>00057   
+<a name="l00058"></a>00058   apic-&gt;focus_cpu = 1;
+<a name="l00059"></a>00059   
+<a name="l00060"></a>00060   <span class="comment">//We ready nauw.</span>
+<a name="l00061"></a>00061   
+<a name="l00062"></a>00062   apic-&gt;spurious_int_vector = 39;
+<a name="l00063"></a>00063   apic-&gt;enabled = 1;
+<a name="l00064"></a>00064   apic-&gt;lvt_timer.vector = 32;
+<a name="l00065"></a>00065   apic-&gt;lvt_timer.mode = 1; <span class="comment">// Periodic</span>
+<a name="l00066"></a>00066   apic-&gt;divisor = 0b1011;
+<a name="l00067"></a>00067   apic-&gt;timer_initial = 1000;
+<a name="l00068"></a>00068   apic-&gt;lvt_timer.mask = 0; <span class="comment">//GO!  </span>
+<a name="l00069"></a>00069 }
+<a name="l00070"></a>00070 
+<a name="l00071"></a><a class="code" href="apic_8h.html#a5c1c678e314c1796b3f04b59f0507a38">00071</a> <span class="keywordtype">void</span> <a class="code" href="apic_8c.html#a5c1c678e314c1796b3f04b59f0507a38">apic_send_eoi</a>() {
+<a name="l00072"></a>00072   apic-&gt;eoi = 0;
+<a name="l00073"></a>00073 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -178,7 +192,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="apic_8c.html">apic.c</a>      </li>
 
-    <li class="footer">Generated on Fri Feb 7 2014 08:36:21 for VOS by
+    <li class="footer">Generated on Fri Feb 7 2014 11:19:37 for VOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -8,6 +8,7 @@ var searchData=
   ['apic_5finit',['apic_init',['../apic_8c.html#aceae0c9fdf4abbdc2996cf78ed44ba42',1,'apic_init():&#160;apic.c'],['../apic_8h.html#aceae0c9fdf4abbdc2996cf78ed44ba42',1,'apic_init():&#160;apic.c']]],
   ['apic_5fis_5favailable',['apic_is_available',['../apic_8c.html#a5d6f59e6b4b73693b36977d85c19acd7',1,'apic_is_available():&#160;apic.c'],['../apic_8h.html#a5d6f59e6b4b73693b36977d85c19acd7',1,'apic_is_available():&#160;apic.c']]],
   ['apic_5fmsr',['APIC_MSR',['../apic_8h.html#addaf808a2370b5a646905880131e5334',1,'apic.h']]],
+  ['apic_5fsend_5feoi',['apic_send_eoi',['../apic_8c.html#a5c1c678e314c1796b3f04b59f0507a38',1,'apic_send_eoi():&#160;apic.c'],['../apic_8h.html#a5c1c678e314c1796b3f04b59f0507a38',1,'apic_send_eoi():&#160;apic.c']]],
   ['apr',['apr',['../struct____attribute____.html#a9b84bdc0c547073acb0b4b1c5f4284dd',1,'__attribute__']]],
   ['arch',['ARCH',['../arch_8h.html#a63e66b419dba650abc74240836e8447a',1,'arch.h']]],
   ['arch_2ec',['arch.c',['../arch_8c.html',1,'']]],
