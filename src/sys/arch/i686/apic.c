@@ -42,6 +42,8 @@ void apic_init() {
   apic->lvt_lint1.mask = 1;
   apic->lvt_error.mask = 1;
   
+  apic->eoi_broadcast_suppression = 1;
+  
   apic->tpr.priority = 0;
   
   msr |= (1 << 11);
@@ -53,10 +55,7 @@ void apic_init() {
 
   uint32_t volatile * apicraw = (uint32_t volatile *) apic;
   
-//  apic->focus_cpu = 1;
-  //apicraw[0x0F0 >> 2] = 0x100 | 39;
-//  apicraw[0x320 >> 2] = 0x20000 | 34;
-//  apicraw[0x380 >> 2] = 10000000;
+  apic->focus_cpu = 1;
   
   //We ready nauw.
   
@@ -65,7 +64,7 @@ void apic_init() {
   apic->lvt_timer.vector = 32;
   apic->lvt_timer.mode = 1; // Periodic
   apic->divisor = 0b1011;
-  apic->timer_initial = 1000000000;
+  apic->timer_initial = 1000;
   apic->lvt_timer.mask = 0; //GO!  
 }
 

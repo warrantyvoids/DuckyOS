@@ -47,6 +47,7 @@ static void timer_interrupt( isr_args_t args ) {
   terminal_writestring("Timer ");
   terminal_writehex(timerval++);
   terminal_putchar('\n');
+  apic_send_eoi();
 }
  
 #if defined(__cplusplus)
