@@ -32,6 +32,16 @@ void unhandled_interrupt( isr_args_t args ) {
   terminal_putchar('\n');
 }
 
+static void int_hang ( isr_args_t args ) {
+  terminal_writestring("Stopping. Recieved int ");
+  terminal_writehexdigits(args.interrupt_id);
+  terminal_writestring(" with error code ");
+  terminal_writehex(args.error_code);
+  terminal_writestring(".\n");
+  
+  while (1);
+}
+
 static void timer_interrupt( isr_args_t args ) {
   static uint32_t timerval = 0;
   terminal_writestring("Timer ");
@@ -54,6 +64,7 @@ void kernel_main()
         isr_set_handler(IRQ_TIMER, &timer_interrupt);
         isr_set_handler(0x0D, &protection_fault);
         isr_set_handler(0x08, &double_fault);
+        isr_set_handler(0x06, &int_hang );
 
         terminal_writestring("ISR Initialized...\n");
 
@@ -82,7 +93,7 @@ void kernel_main()
         }
         
 
-	asm volatile (" int $0x01 ");
+//	asm volatile (" int $0x01 ");
 //	asm volatile (" int $0x04 ");
 	
 //	uint32_t rax, rdx;

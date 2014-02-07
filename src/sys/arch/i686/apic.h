@@ -17,7 +17,7 @@
 bool apic_is_available();
 
 void apic_init();
-
+void apic_send_eoi();
 
 
 #define APIC_BASE 0xFEE0000

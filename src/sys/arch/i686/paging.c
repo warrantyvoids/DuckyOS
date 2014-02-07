@@ -21,9 +21,9 @@ void paging_init() {
   pLowpagetable = KERNEL_TO_REAL(lowpagetable);
   pMiscpagetable = KERNEL_TO_REAL(miscpagetable);
   
-  for (int i = 0; i < 1024; i++) {      // For this code, see http://www.osdev.org/Higher_Half_With_GDT
-    lowpagetable[i] = (i * 4096) | 0x3;	// map first 4 MB
-    kernelpagedir[i] = 0;		// clear page directory entries
+  for (int i = 0; i < 1024; i++) {              // For this code, see http://www.osdev.org/Higher_Half_With_GDT
+    lowpagetable[i] = (i * 0x1000) | 0x3;	// map first 4 MB
+    kernelpagedir[i] = 0;		        // clear page directory entries
     miscpagetable[i] = 0;
   }
   

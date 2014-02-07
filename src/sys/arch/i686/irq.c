@@ -1,7 +1,7 @@
 #include "../arch.h"
 #include "util.h"
 #include "pic.h"
-
+#include "apic.h"
 
 static isr_handler_t handlers[256];
 
@@ -24,15 +24,18 @@ void isr_handler(isr_args_t args) {
 }
 
 void irq_handler(isr_args_t args) {
-  if (args.interrupt_id >=  IRQ8 )
-    outb( PIC2_CMD , PIC_CMD_RESET );
+//  if (args.interrupt_id >=  IRQ8 )
+//    outb( PIC2_CMD , PIC_CMD_RESET );
     
-  outb( PIC1_CMD, PIC_CMD_RESET );
+//  outb( PIC1_CMD, PIC_CMD_RESET );
   
   if (handlers[args.interrupt_id]) {
     handlers[args.interrupt_id](args);
   } else {
     unhandled_interrupt(args);
   }
+  
+//  apic_send_eoi( );
+  
 }
   
