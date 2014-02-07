@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['access',['access',['../structgdt__entry.html#af8f88469b3301c3e777e97b470a97413',1,'gdt_entry::access()'],['../tables_8c.html#a8b0d6200bc639dd37ff68847a0adde5f',1,'access():&#160;tables.c']]],
+  ['access',['access',['../structgdt__entry.html#af8f88469b3301c3e777e97b470a97413',1,'gdt_entry']]],
   ['alignas',['alignas',['../paging_8c.html#a4d4f624cd7a061cda85bfccc59058509',1,'paging.c']]],
   ['apic_2ec',['apic.c',['../apic_8c.html',1,'']]],
   ['apic_2eh',['apic.h',['../apic_8h.html',1,'']]],
@@ -9,7 +9,7 @@ var searchData=
   ['apic_5fis_5favailable',['apic_is_available',['../apic_8c.html#a5d6f59e6b4b73693b36977d85c19acd7',1,'apic_is_available():&#160;apic.c'],['../apic_8h.html#a5d6f59e6b4b73693b36977d85c19acd7',1,'apic_is_available():&#160;apic.c']]],
   ['apic_5fmsr',['APIC_MSR',['../apic_8h.html#addaf808a2370b5a646905880131e5334',1,'apic.h']]],
   ['apic_5fsend_5feoi',['apic_send_eoi',['../apic_8c.html#a5c1c678e314c1796b3f04b59f0507a38',1,'apic_send_eoi():&#160;apic.c'],['../apic_8h.html#a5c1c678e314c1796b3f04b59f0507a38',1,'apic_send_eoi():&#160;apic.c']]],
-  ['apr',['apr',['../struct____attribute____.html#a9b84bdc0c547073acb0b4b1c5f4284dd',1,'__attribute__']]],
+  ['apr',['apr',['../structlocal__apic__t.html#ac5788ae2cd9f665561d898ec2e62ea3f',1,'local_apic_t']]],
   ['arch',['ARCH',['../arch_8h.html#a63e66b419dba650abc74240836e8447a',1,'arch.h']]],
   ['arch_2ec',['arch.c',['../arch_8c.html',1,'']]],
   ['arch_2eh',['arch.h',['../arch_8h.html',1,'']]],
@@ -19,8 +19,8 @@ var searchData=
   ['arch_5fpostinit',['arch_postinit',['../arch_8h.html#ac809c0d64d88725a9771cc5e6b446133',1,'arch_postinit(void):&#160;arch.c'],['../arch_8c.html#a92f58a798c20a04a40217f6b1c8718d2',1,'arch_postinit():&#160;arch.c']]],
   ['arch_5ftmr',['ARCH_TMR',['../arch_8h.html#af16d69e0f9dde1d1a5cc3a1b2e52bf8a',1,'arch.h']]],
   ['arch_5futil',['ARCH_UTIL',['../arch_8h.html#a4c3fdcc951c3c38bbd74cff1ee703c4e',1,'arch.h']]],
-  ['arg1',['arg1',['../struct____attribute____.html#a8e6bc12799cae814d6f6a1903cf38846',1,'__attribute__']]],
-  ['arg2',['arg2',['../struct____attribute____.html#ac8b68914bc548c9dc4b5c7ccbcef89d0',1,'__attribute__']]],
-  ['arg3',['arg3',['../struct____attribute____.html#a86f4778a76894bfd9897622ee000f554',1,'__attribute__']]],
-  ['arg4',['arg4',['../struct____attribute____.html#ae5f73955f5c7f58fa794314388e58b8e',1,'__attribute__']]]
+  ['arg1',['arg1',['../structisr__args__t.html#af702e9f3801e361e3cdd970a6cf0addd',1,'isr_args_t']]],
+  ['arg2',['arg2',['../structisr__args__t.html#ac3303a984967dd2a25bb571245ea38c5',1,'isr_args_t']]],
+  ['arg3',['arg3',['../structisr__args__t.html#a86273cc0186881313b4b3c477257a7a6',1,'isr_args_t']]],
+  ['arg4',['arg4',['../structisr__args__t.html#a13e8b1c0fbeef09785c34aca80a1c3ec',1,'isr_args_t']]]
 ];

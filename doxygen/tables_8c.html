@@ -118,48 +118,19 @@ Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structidt__ptr.html">idt_ptr</a></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structgdt__entry.html">gdt_entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#ae21df847b32e33e64ba0912dd628e610">__attribute__</a> ((packed))</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#a5cad259805a61afe1857aa648e76d30f">gdt_set_gate</a> (int32_t num, uint32_t <a class="el" href="tables_8c.html#a0523cedff47e2441fc198b7770ec5d3f">base</a>, uint32_t <a class="el" href="tables_8c.html#ab28e82ae69032cb4ad3ec3a0be3d7129">limit</a>, uint8_t <a class="el" href="tables_8c.html#a8b0d6200bc639dd37ff68847a0adde5f">access</a>, uint8_t gran)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#a5cad259805a61afe1857aa648e76d30f">gdt_set_gate</a> (int32_t num, uint32_t base, uint32_t limit, uint8_t access, uint8_t gran)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#aaa7a7d6a41843f8a0c64fd66967feef4">gdt_init</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#a6e6a216cea4572c3169c0d11f16d7d01">idt_flush</a> (uint32_t)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#a88d4205d069421eb4f8e7577285f1180">idt_init</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#a3d3ffcf0b802f7ced59c8936e1978010">idt_set_gate</a> (uint8_t num, uint32_t <a class="el" href="tables_8c.html#a0523cedff47e2441fc198b7770ec5d3f">base</a>, uint16_t <a class="el" href="tables_8c.html#a1c44289c163c1460544d6ee0900d02ba">selector</a>, uint8_t <a class="el" href="tables_8c.html#aa2585d779da0ab21273a8d92de9a0ebe">flags</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#a3d3ffcf0b802f7ced59c8936e1978010">idt_set_gate</a> (uint8_t num, uint32_t base, uint16_t selector, uint8_t flags)</td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#aa7ae5b5a918e00776ff07fb1c58a348d">limit_low</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#a71e21ea67de59991e9a27666a1752a8f">base_low</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#a6b67e86f6de9204d76adab79069aec29">base_middle</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#a8b0d6200bc639dd37ff68847a0adde5f">access</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#acfea365f69e71368a2db03333d4afd6f">granularity</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#af938fbfc9a941670e25f33864b29222b">base_high</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#ab28e82ae69032cb4ad3ec3a0be3d7129">limit</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#a0523cedff47e2441fc198b7770ec5d3f">base</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#a1c44289c163c1460544d6ee0900d02ba">selector</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#aa428cf0f6ad2ceb00918e70a0a0f74a6">ignore_is_always_0</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#aa2585d779da0ab21273a8d92de9a0ebe">flags</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structgdt__entry.html">gdt_entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#aaecd9bba62346ee23bff7e6f5fac403b">gdt</a> [5]</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structgdt__ptr.html">gdt_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#ab05dcbde2d79c348a71dbc7f41a7de85">p_gdt</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structidt__entry.html">idt_entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#a45aea3b9652363cfde70bd3563928eca">idts</a> [256]</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structidt__ptr.html">idt_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tables_8c.html#ad957db2b8798a929084c7eb810435cf0">p_idt</a></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="ae21df847b32e33e64ba0912dd628e610"></a><!-- doxytag: member="tables.c::__attribute__" ref="ae21df847b32e33e64ba0912dd628e610" args="((packed))" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structgdt__entry.html">gdt_entry</a> <a class="el" href="struct____attribute____.html">__attribute__</a> </td>
-          <td>(</td>
-          <td class="paramtype">(packed)&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="aaa7a7d6a41843f8a0c64fd66967feef4"></a><!-- doxytag: member="tables.c::gdt_init" ref="aaa7a7d6a41843f8a0c64fd66967feef4" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -302,96 +273,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Variable Documentation</h2>
-<a class="anchor" id="a8b0d6200bc639dd37ff68847a0adde5f"></a><!-- doxytag: member="tables.c::access" ref="a8b0d6200bc639dd37ff68847a0adde5f" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t <a class="el" href="tables_8c.html#a8b0d6200bc639dd37ff68847a0adde5f">access</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="tables_8c_source.html#l00020">20</a> of file <a class="el" href="tables_8c_source.html">tables.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0523cedff47e2441fc198b7770ec5d3f"></a><!-- doxytag: member="tables.c::base" ref="a0523cedff47e2441fc198b7770ec5d3f" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t <a class="el" href="tables_8c.html#a0523cedff47e2441fc198b7770ec5d3f">base</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="tables_8c_source.html#l00024">24</a> of file <a class="el" href="tables_8c_source.html">tables.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="af938fbfc9a941670e25f33864b29222b"></a><!-- doxytag: member="tables.c::base_high" ref="af938fbfc9a941670e25f33864b29222b" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t <a class="el" href="tables_8c.html#af938fbfc9a941670e25f33864b29222b">base_high</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="tables_8c_source.html#l00022">22</a> of file <a class="el" href="tables_8c_source.html">tables.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a71e21ea67de59991e9a27666a1752a8f"></a><!-- doxytag: member="tables.c::base_low" ref="a71e21ea67de59991e9a27666a1752a8f" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t <a class="el" href="tables_8c.html#a71e21ea67de59991e9a27666a1752a8f">base_low</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="tables_8c_source.html#l00018">18</a> of file <a class="el" href="tables_8c_source.html">tables.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6b67e86f6de9204d76adab79069aec29"></a><!-- doxytag: member="tables.c::base_middle" ref="a6b67e86f6de9204d76adab79069aec29" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t <a class="el" href="tables_8c.html#a6b67e86f6de9204d76adab79069aec29">base_middle</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="tables_8c_source.html#l00019">19</a> of file <a class="el" href="tables_8c_source.html">tables.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa2585d779da0ab21273a8d92de9a0ebe"></a><!-- doxytag: member="tables.c::flags" ref="aa2585d779da0ab21273a8d92de9a0ebe" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t <a class="el" href="tables_8c.html#aa2585d779da0ab21273a8d92de9a0ebe">flags</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="tables_8c_source.html#l00035">35</a> of file <a class="el" href="tables_8c_source.html">tables.c</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="aaecd9bba62346ee23bff7e6f5fac403b"></a><!-- doxytag: member="tables.c::gdt" ref="aaecd9bba62346ee23bff7e6f5fac403b" args="[5]" -->
 <div class="memitem">
 <div class="memproto">
@@ -407,21 +288,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="acfea365f69e71368a2db03333d4afd6f"></a><!-- doxytag: member="tables.c::granularity" ref="acfea365f69e71368a2db03333d4afd6f" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t <a class="el" href="tables_8c.html#acfea365f69e71368a2db03333d4afd6f">granularity</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="tables_8c_source.html#l00021">21</a> of file <a class="el" href="tables_8c_source.html">tables.c</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a45aea3b9652363cfde70bd3563928eca"></a><!-- doxytag: member="tables.c::idts" ref="a45aea3b9652363cfde70bd3563928eca" args="[256]" -->
 <div class="memitem">
 <div class="memproto">
@@ -434,51 +300,6 @@ Variables</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="tables_8c_source.html#l00042">42</a> of file <a class="el" href="tables_8c_source.html">tables.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa428cf0f6ad2ceb00918e70a0a0f74a6"></a><!-- doxytag: member="tables.c::ignore_is_always_0" ref="aa428cf0f6ad2ceb00918e70a0a0f74a6" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t <a class="el" href="tables_8c.html#aa428cf0f6ad2ceb00918e70a0a0f74a6">ignore_is_always_0</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="tables_8c_source.html#l00034">34</a> of file <a class="el" href="tables_8c_source.html">tables.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab28e82ae69032cb4ad3ec3a0be3d7129"></a><!-- doxytag: member="tables.c::limit" ref="ab28e82ae69032cb4ad3ec3a0be3d7129" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t <a class="el" href="tables_8c.html#ab28e82ae69032cb4ad3ec3a0be3d7129">limit</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="tables_8c_source.html#l00023">23</a> of file <a class="el" href="tables_8c_source.html">tables.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa7ae5b5a918e00776ff07fb1c58a348d"></a><!-- doxytag: member="tables.c::limit_low" ref="aa7ae5b5a918e00776ff07fb1c58a348d" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t <a class="el" href="tables_8c.html#aa7ae5b5a918e00776ff07fb1c58a348d">limit_low</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="tables_8c_source.html#l00017">17</a> of file <a class="el" href="tables_8c_source.html">tables.c</a>.</p>
 
 </div>
 </div>
@@ -512,21 +333,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1c44289c163c1460544d6ee0900d02ba"></a><!-- doxytag: member="tables.c::selector" ref="a1c44289c163c1460544d6ee0900d02ba" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t <a class="el" href="tables_8c.html#a1c44289c163c1460544d6ee0900d02ba">selector</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="tables_8c_source.html#l00033">33</a> of file <a class="el" href="tables_8c_source.html">tables.c</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -547,7 +353,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="tables_8c.html">tables.c</a>      </li>
 
-    <li class="footer">Generated on Fri Feb 7 2014 11:19:37 for VOS by
+    <li class="footer">Generated on Fri Feb 7 2014 11:24:14 for VOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

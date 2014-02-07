@@ -114,111 +114,111 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00023"></a><a class="code" href="apic_8h.html#a110b2b0bc8ef2f8a961de825f152570e">00023</a> <span class="preprocessor">#define APIC_BASE 0xFEE0000</span>
 <a name="l00024"></a><a class="code" href="apic_8h.html#addaf808a2370b5a646905880131e5334">00024</a> <span class="preprocessor"></span><span class="preprocessor">#define APIC_MSR 0x1B</span>
 <a name="l00025"></a>00025 <span class="preprocessor"></span>
-<a name="l00026"></a><a class="code" href="struct____attribute____.html">00026</a> <span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">struct </span>{
+<a name="l00026"></a><a class="code" href="structlocal__apic__t.html">00026</a> <span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">struct </span>{
 <a name="l00027"></a>00027 <span class="comment">// 0x0000 - 0x1F are reserved  </span>
-<a name="l00028"></a><a class="code" href="struct____attribute____.html#a6e3f2963352647a53e594f09d57de9c9">00028</a>    uint32_t __reserved_0000[4];
-<a name="l00029"></a><a class="code" href="struct____attribute____.html#a6793dbd26410ae8470dca22b0e4085b3">00029</a>    uint32_t __reserved_0010[4];
+<a name="l00028"></a><a class="code" href="structlocal__apic__t.html#a84be8f976001786ffc75744f54f4c3b2">00028</a>    uint32_t __reserved_0000[4];
+<a name="l00029"></a><a class="code" href="structlocal__apic__t.html#a4754da602533ef624dd7cd012d1c34b2">00029</a>    uint32_t __reserved_0010[4];
 <a name="l00030"></a>00030 <span class="comment">// 0x0020 Local APIC ID register</span>
-<a name="l00031"></a><a class="code" href="struct____attribute____.html#a69300fcb6cf0e74f5292265bf1a3c78f">00031</a>    uint32_t __reserved_0020 : 24,
+<a name="l00031"></a><a class="code" href="structlocal__apic__t.html#a63a53dab59e0eaaf56530ce5dd7b35e0">00031</a>    uint32_t __reserved_0020 : 24,
 <a name="l00032"></a>00032             physical_id     :  4,
 <a name="l00033"></a>00033             __reserved_0023 :  4;
-<a name="l00034"></a><a class="code" href="struct____attribute____.html#ad0e87375df69d6d8eb34243a998ff623">00034</a>    uint32_t __reserved_0024[3];
+<a name="l00034"></a><a class="code" href="structlocal__apic__t.html#af3a094806fe30b8cbc19eb169d0f4792">00034</a>    uint32_t __reserved_0024[3];
 <a name="l00035"></a>00035             
 <a name="l00036"></a>00036 <span class="comment">// 0x0030 Local APIC Version register (RO)</span>
 <a name="l00037"></a>00037    <span class="keyword">const</span>
-<a name="l00038"></a><a class="code" href="struct____attribute____.html#a0b054792e69b7a849abdd5945de4f2b6">00038</a>    uint32_t version : 8,
+<a name="l00038"></a><a class="code" href="structlocal__apic__t.html#a687da21f05eda2c0da162777829043e1">00038</a>    uint32_t version : 8,
 <a name="l00039"></a>00039             __reserved_0031 : 8,
 <a name="l00040"></a>00040             max_lvt_entries : 8,
 <a name="l00041"></a>00041             __reserved_0033 : 8;
-<a name="l00042"></a><a class="code" href="struct____attribute____.html#acf3af90aaca1f3f7ab701f9761c68cd9">00042</a>    uint32_t __reserved_0034[3];
+<a name="l00042"></a><a class="code" href="structlocal__apic__t.html#ab6b7018f048cbdd097d57d5826f1ebcc">00042</a>    uint32_t __reserved_0034[3];
 <a name="l00043"></a>00043    
 <a name="l00044"></a>00044 <span class="comment">// 0x0040 - Reserved</span>
-<a name="l00045"></a><a class="code" href="struct____attribute____.html#a0468c8699df79e7d57661b6dcc972af1">00045</a>    uint32_t __reserved_0040[4];
+<a name="l00045"></a><a class="code" href="structlocal__apic__t.html#aea6e77d36fe6d3f89146733f41df7e43">00045</a>    uint32_t __reserved_0040[4];
 <a name="l00046"></a>00046 <span class="comment">// 0x0050 - Reserved</span>
-<a name="l00047"></a><a class="code" href="struct____attribute____.html#a166c53dd3173865bea09d63a8dee0e8e">00047</a>    uint32_t __reserved_0050[4];
+<a name="l00047"></a><a class="code" href="structlocal__apic__t.html#ab884c57ee970f4ba283631892d262cbb">00047</a>    uint32_t __reserved_0050[4];
 <a name="l00048"></a>00048 <span class="comment">// 0x0060 - Reserved</span>
-<a name="l00049"></a><a class="code" href="struct____attribute____.html#a0a8958b4d4bf34c96e80e52595a1e117">00049</a>    uint32_t __reserved_0060[4];
+<a name="l00049"></a><a class="code" href="structlocal__apic__t.html#abbd8b1f0674d4e55442fd02d64ea9846">00049</a>    uint32_t __reserved_0060[4];
 <a name="l00050"></a>00050 <span class="comment">// 0x0070 - Reserved</span>
-<a name="l00051"></a><a class="code" href="struct____attribute____.html#a2be84e14be2ea0afe7937552f8fbf992">00051</a>    uint32_t __reserved_0070[4];
+<a name="l00051"></a><a class="code" href="structlocal__apic__t.html#a288e308628a33f876a6da88d9bc1247d">00051</a>    uint32_t __reserved_0070[4];
 <a name="l00052"></a>00052 <span class="comment">// 0x0080 Task Priority Register</span>
 <a name="l00053"></a>00053    <span class="keyword">struct </span>{
-<a name="l00054"></a><a class="code" href="struct____attribute____.html#ab7b153b8486c6f1eef6c442efa790de2">00054</a>      uint32_t priority : 8,
+<a name="l00054"></a><a class="code" href="structlocal__apic__t.html#a6470a17e61f26dfa63ccbda78f043b2f">00054</a>      uint32_t priority : 8,
 <a name="l00055"></a>00055             __reserved_0081 : 24;
-<a name="l00056"></a><a class="code" href="struct____attribute____.html#a7d38c0bf95b72ab5be568a4581ccdffd">00056</a>      uint32_t __reserved_0084[3];
+<a name="l00056"></a><a class="code" href="structlocal__apic__t.html#a668da16f639a7b344515e4d7d682ad53">00056</a>      uint32_t __reserved_0084[3];
 <a name="l00057"></a>00057    } tpr;
 <a name="l00058"></a>00058    
 <a name="l00059"></a>00059 <span class="comment">// 0x0090 Arbitration Priority Register</span>
 <a name="l00060"></a>00060   <span class="keyword">const</span>
 <a name="l00061"></a>00061   <span class="keyword">struct </span>{
-<a name="l00062"></a><a class="code" href="struct____attribute____.html#a479ef0d26198f9082d46f869cdb15828">00062</a>     uint32_t priority : 8,
+<a name="l00062"></a><a class="code" href="structlocal__apic__t.html#afa5a1db4fba768d146df1cd6cb197f46">00062</a>     uint32_t priority : 8,
 <a name="l00063"></a>00063           __reserved_0091 : 24;
-<a name="l00064"></a><a class="code" href="struct____attribute____.html#a02985289bb7dc81dce93a10e74cba466">00064</a>     uint32_t __reserved_0094[3];
+<a name="l00064"></a><a class="code" href="structlocal__apic__t.html#ac8af66ad96e1fc43014b6e9c6cc10e54">00064</a>     uint32_t __reserved_0094[3];
 <a name="l00065"></a>00065   } apr,
 <a name="l00066"></a>00066 <span class="comment">// 0x00A0 Processor Priority Register  </span>
 <a name="l00067"></a>00067   ppr;
 <a name="l00068"></a>00068   
 <a name="l00069"></a>00069 <span class="comment">// 0x00B0 End of Interrupt Register</span>
-<a name="l00070"></a><a class="code" href="struct____attribute____.html#adee65f2ac8ff81341b71f63f73c63759">00070</a>   uint32_t <a class="code" href="struct____attribute____.html#adee65f2ac8ff81341b71f63f73c63759">eoi</a>;
-<a name="l00071"></a><a class="code" href="struct____attribute____.html#aa0fa5da20310ade8d366f378f337f3ca">00071</a>   uint32_t __reserved_00B4[3];
+<a name="l00070"></a><a class="code" href="structlocal__apic__t.html#aee5fbbf1c4e8cc0ab1f54ef526d3547f">00070</a>   uint32_t <a class="code" href="structlocal__apic__t.html#aee5fbbf1c4e8cc0ab1f54ef526d3547f">eoi</a>;
+<a name="l00071"></a><a class="code" href="structlocal__apic__t.html#a4707dfb5d4baf15495633947c3248827">00071</a>   uint32_t __reserved_00B4[3];
 <a name="l00072"></a>00072   
 <a name="l00073"></a>00073 <span class="comment">// 0x00C0 Remote Read Register - not used in P4&#39;s / Xeon&#39;s</span>
 <a name="l00074"></a>00074   <span class="keyword">const</span>
-<a name="l00075"></a><a class="code" href="struct____attribute____.html#a1cebd67f26e2f726d1527126fe63a551">00075</a>   uint32_t __reserved_00C0[4];
+<a name="l00075"></a><a class="code" href="structlocal__apic__t.html#a1a63bcf1fbf779a3c6dd9afeeb003b94">00075</a>   uint32_t __reserved_00C0[4];
 <a name="l00076"></a>00076 
 <a name="l00077"></a>00077 <span class="comment">// 0x00D0 Logical Destination Register</span>
-<a name="l00078"></a><a class="code" href="struct____attribute____.html#ad963675be3552a824c843d09aab2d72b">00078</a>   uint32_t __reserved_00D0 : 24,
+<a name="l00078"></a><a class="code" href="structlocal__apic__t.html#a70357f1758a96a405e87fe5f68d71180">00078</a>   uint32_t __reserved_00D0 : 24,
 <a name="l00079"></a>00079            logical_destination : 8;
-<a name="l00080"></a><a class="code" href="struct____attribute____.html#afd95c79caec66549d23b7ebc42689835">00080</a>   uint32_t __reserved_00D4[3];
+<a name="l00080"></a><a class="code" href="structlocal__apic__t.html#a8ee1e675bc3ad84ddb9c163de8ceddfd">00080</a>   uint32_t __reserved_00D4[3];
 <a name="l00081"></a>00081 
 <a name="l00082"></a>00082 <span class="comment">// 0x00E0 Destination Format Register</span>
-<a name="l00083"></a><a class="code" href="struct____attribute____.html#a452bfcfe2503de1021dd73d9b5021b20">00083</a>   uint32_t __reserved_00E0 : 28,
+<a name="l00083"></a><a class="code" href="structlocal__apic__t.html#a58fab5838b179a8801c518db54dffe02">00083</a>   uint32_t __reserved_00E0 : 28,
 <a name="l00084"></a>00084           destination_format_model : 4;
-<a name="l00085"></a><a class="code" href="struct____attribute____.html#a10d47fb8d2198c66e97a91e1c042c590">00085</a>   uint32_t __reserved_00E4[3];
+<a name="l00085"></a><a class="code" href="structlocal__apic__t.html#a1ec1a61960d32ed13646bdde4fdadf63">00085</a>   uint32_t __reserved_00E4[3];
 <a name="l00086"></a>00086   
 <a name="l00087"></a>00087 <span class="comment">// 0x00F0 Spurious Interrupt Vector Register</span>
-<a name="l00088"></a><a class="code" href="struct____attribute____.html#a1aebeef60775f586c85d68de913fcb23">00088</a>   uint32_t spurious_int_vector : 8,
+<a name="l00088"></a><a class="code" href="structlocal__apic__t.html#a2886e566caf47e989dd3bd96faf260ff">00088</a>   uint32_t spurious_int_vector : 8,
 <a name="l00089"></a>00089            enabled : 1,
 <a name="l00090"></a>00090            focus_cpu : 1,        <span class="comment">//Not supported on Intel Xeon!!! Probably shouldn&#39;t be defined here as well</span>
 <a name="l00091"></a>00091            __reserved_00F1 : 2,
 <a name="l00092"></a>00092            eoi_broadcast_suppression : 1,
 <a name="l00093"></a>00093            __reserved_00F2 : 19;
-<a name="l00094"></a><a class="code" href="struct____attribute____.html#ac0a32312707e6c28142f4959ec9f12e1">00094</a>   uint32_t __reserved_00F4[3];
+<a name="l00094"></a><a class="code" href="structlocal__apic__t.html#a9fd30e3ceee642f51c55ce1977fd4960">00094</a>   uint32_t __reserved_00F4[3];
 <a name="l00095"></a>00095 
 <a name="l00096"></a>00096 <span class="comment">// 0x0100 - 0x0170 Interrupt Status Register</span>
 <a name="l00097"></a>00097   <span class="keyword">const</span>
 <a name="l00098"></a>00098   <span class="keyword">struct </span>{
-<a name="l00099"></a><a class="code" href="struct____attribute____.html#aab3861e5f053d4246649edff83a7e8fc">00099</a>     uint32_t <a class="code" href="struct____attribute____.html#aab3861e5f053d4246649edff83a7e8fc">bitfield</a>;
-<a name="l00100"></a><a class="code" href="struct____attribute____.html#a195afc39ea103a98b3222a700db1f6ce">00100</a>     uint32_t __reserved_0104[3];
+<a name="l00099"></a><a class="code" href="structlocal__apic__t.html#a7ce0ff3d1a397ff97dff4b546b8c825b">00099</a>     uint32_t <a class="code" href="structlocal__apic__t.html#a7ce0ff3d1a397ff97dff4b546b8c825b">bitfield</a>;
+<a name="l00100"></a><a class="code" href="structlocal__apic__t.html#a0ed5a4e31440fb76f51c176bb790aa2b">00100</a>     uint32_t __reserved_0104[3];
 <a name="l00101"></a>00101   } isr [8];
 <a name="l00102"></a>00102   
 <a name="l00103"></a>00103 <span class="comment">// 0x0180 - 0x01F0 Trigger Mode Register</span>
 <a name="l00104"></a>00104   <span class="keyword">const</span>
 <a name="l00105"></a>00105   <span class="keyword">struct </span>{
 <a name="l00106"></a>00106     uint32_t bitfield;
-<a name="l00107"></a><a class="code" href="struct____attribute____.html#ac83201fef09fb502a3d78246c026e488">00107</a>     uint32_t __reserved_0184[3];
+<a name="l00107"></a><a class="code" href="structlocal__apic__t.html#aee533f5fd5e5447e93e914bc7152abf1">00107</a>     uint32_t __reserved_0184[3];
 <a name="l00108"></a>00108   } tmr [8];
 <a name="l00109"></a>00109   
 <a name="l00110"></a>00110 <span class="comment">// 0x0200 - 0x0270 Interrupt Request Register</span>
 <a name="l00111"></a>00111   <span class="keyword">const</span>
 <a name="l00112"></a>00112   <span class="keyword">struct </span>{
 <a name="l00113"></a>00113     uint32_t bitfield;
-<a name="l00114"></a><a class="code" href="struct____attribute____.html#a08fe779f5b4caae40b1f100893b83cfa">00114</a>     uint32_t __reserved_0200[3];
+<a name="l00114"></a><a class="code" href="structlocal__apic__t.html#aaea1a6bc69c0760fea21db035e82dd6b">00114</a>     uint32_t __reserved_0200[3];
 <a name="l00115"></a>00115   } irr[8];
 <a name="l00116"></a>00116   
 <a name="l00117"></a>00117 <span class="comment">// 0x0280 Error Status Register</span>
-<a name="l00118"></a><a class="code" href="struct____attribute____.html#a1defffcb1cf202fdcff7427215b12ea4">00118</a>   <span class="keyword">const</span> uint32_t <a class="code" href="struct____attribute____.html#a1defffcb1cf202fdcff7427215b12ea4">error</a>;
-<a name="l00119"></a><a class="code" href="struct____attribute____.html#a8a61842275a23ab3656f7f2e85c5451c">00119</a>   <span class="keyword">const</span> uint32_t __reserved_0284[3];
+<a name="l00118"></a><a class="code" href="structlocal__apic__t.html#a43711e0bbb729c4f8cf082c27473665d">00118</a>   <span class="keyword">const</span> uint32_t <a class="code" href="structlocal__apic__t.html#a43711e0bbb729c4f8cf082c27473665d">error</a>;
+<a name="l00119"></a><a class="code" href="structlocal__apic__t.html#ad40e6482ec497339783ed0c30a7e4edb">00119</a>   <span class="keyword">const</span> uint32_t __reserved_0284[3];
 <a name="l00120"></a>00120   
 <a name="l00121"></a>00121 <span class="comment">// 0x0290 - 0x2E0 Reserved</span>
-<a name="l00122"></a><a class="code" href="struct____attribute____.html#a2ac22e157ebab12eee4fc18e5d60f42f">00122</a>   uint32_t __reserved_0290[4*6];
+<a name="l00122"></a><a class="code" href="structlocal__apic__t.html#ad88dcbb784f168c2b6046e17ee1125b3">00122</a>   uint32_t __reserved_0290[4*6];
 <a name="l00123"></a>00123   
 <a name="l00124"></a>00124 <span class="comment">// 0x02F0 LVT CMCI. I have literally no idea what this does since documentation is _VERY_ limited.</span>
-<a name="l00125"></a><a class="code" href="struct____attribute____.html#a3cdbd008d9f249e8ebca709f614bd357">00125</a>   uint32_t <a class="code" href="struct____attribute____.html#a3cdbd008d9f249e8ebca709f614bd357">lvt_cmci</a>;
-<a name="l00126"></a><a class="code" href="struct____attribute____.html#af3cbde7fa3b48d002769fa9029ac619b">00126</a>   uint32_t __reserved_02F4[3];
+<a name="l00125"></a><a class="code" href="structlocal__apic__t.html#ad958e6e4bbafd3742d21926a4d8b3301">00125</a>   uint32_t <a class="code" href="structlocal__apic__t.html#ad958e6e4bbafd3742d21926a4d8b3301">lvt_cmci</a>;
+<a name="l00126"></a><a class="code" href="structlocal__apic__t.html#a71ad4f6b84944fc9c28c4586bf9471ef">00126</a>   uint32_t __reserved_02F4[3];
 <a name="l00127"></a>00127   
 <a name="l00128"></a>00128 <span class="comment">// 0x0300 - 0x0310 Interrupt command</span>
 <a name="l00129"></a>00129   <span class="keyword">struct </span>{
-<a name="l00130"></a><a class="code" href="struct____attribute____.html#a540d7605243db1e81d4789bddbb949b4">00130</a>     uint32_t vector            : 8,
+<a name="l00130"></a><a class="code" href="structlocal__apic__t.html#afe85e21bbd8a12ceb4ff23fa3556b03c">00130</a>     uint32_t vector            : 8,
 <a name="l00131"></a>00131              delivery_mode     : 3,
 <a name="l00132"></a>00132              destination_mode  : 1,
 <a name="l00133"></a>00133              delivery_status   : 1,
@@ -228,21 +228,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00137"></a>00137              __reserved_0302   : 2,
 <a name="l00138"></a>00138              shorthand         : 2,
 <a name="l00139"></a>00139              __reserved_0303   :12;
-<a name="l00140"></a><a class="code" href="struct____attribute____.html#aba5e748a8c29df53700f209d65e71318">00140</a>      uint32_t __reserved_0304[3];
-<a name="l00141"></a><a class="code" href="struct____attribute____.html#a4ab3273aa660b0cc0fb796c28ceb413f">00141</a>      uint32_t __reserved_0310 : 24,
+<a name="l00140"></a><a class="code" href="structlocal__apic__t.html#a207c94d013e59d47fc38244a0a22a6f9">00140</a>      uint32_t __reserved_0304[3];
+<a name="l00141"></a><a class="code" href="structlocal__apic__t.html#ae6a0938b620ba55b977f3851c8adf248">00141</a>      uint32_t __reserved_0310 : 24,
 <a name="l00142"></a>00142              destination : 8;
-<a name="l00143"></a><a class="code" href="struct____attribute____.html#a71dbb2de29a4f3294e25bebd3a864a0b">00143</a>      uint32_t __reserved_0314[3];
+<a name="l00143"></a><a class="code" href="structlocal__apic__t.html#aa95e567c022b7ec9d665d3962cce8d0d">00143</a>      uint32_t __reserved_0314[3];
 <a name="l00144"></a>00144   } icr;
 <a name="l00145"></a>00145 
 <a name="l00146"></a>00146   <span class="keyword">struct </span>{
-<a name="l00147"></a><a class="code" href="struct____attribute____.html#a6bf802deed3f202b5579ba5546c73400">00147</a>     uint32_t vector             : 8,
+<a name="l00147"></a><a class="code" href="structlocal__apic__t.html#afb1b4754bd9a1dc4ce445808d1a0bb61">00147</a>     uint32_t vector             : 8,
 <a name="l00148"></a>00148              __reserved_0x321   : 4,
 <a name="l00149"></a>00149              delivery_status    : 1,
 <a name="l00150"></a>00150              __reserved_0x322   : 3,
 <a name="l00151"></a>00151              mask               : 1,
 <a name="l00152"></a>00152              mode               : 2,
 <a name="l00153"></a>00153              __reserved_0x323   : 13;
-<a name="l00154"></a><a class="code" href="struct____attribute____.html#ae9c2a084df3337bb7670519003dfd874">00154</a>    uint32_t __reserved_0324[3];
+<a name="l00154"></a><a class="code" href="structlocal__apic__t.html#ac62981f47a4ba5dce78894d2c9040ad4">00154</a>    uint32_t __reserved_0324[3];
 <a name="l00155"></a>00155  } lvt_timer;
 <a name="l00156"></a>00156 
 <a name="l00157"></a>00157 <span class="comment">// 0x0320 LVT Timer register</span>
@@ -252,7 +252,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00161"></a>00161 <span class="comment">// 0x0360 LVT INT1 register</span>
 <a name="l00162"></a>00162 <span class="comment">// 0x0370 LVT Error register</span>
 <a name="l00163"></a>00163   <span class="keyword">struct </span>{
-<a name="l00164"></a><a class="code" href="struct____attribute____.html#a19b9251d0b2d8bd9b4f02df56aa7703b">00164</a>     uint32_t vector             : 8,
+<a name="l00164"></a><a class="code" href="structlocal__apic__t.html#a1818477f7ac73873bb128b58a375eb82">00164</a>     uint32_t vector             : 8,
 <a name="l00165"></a>00165              delivery_mode      : 3, <span class="comment">//Not on ERROR</span>
 <a name="l00166"></a>00166              __reserved_0x321   : 1,
 <a name="l00167"></a>00167              delivery_status    : 1, 
@@ -265,25 +265,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00174"></a>00174   } lvt_therm, lvt_perfm, lvt_lint0, lvt_lint1, lvt_error;
 <a name="l00175"></a>00175 
 <a name="l00176"></a>00176 <span class="comment">// 0x0380 Initial Count Register (for Timer)</span>
-<a name="l00177"></a><a class="code" href="struct____attribute____.html#a034c65b35c2a85bfb5146de8414b0f6c">00177</a>   uint32_t <a class="code" href="struct____attribute____.html#a034c65b35c2a85bfb5146de8414b0f6c">timer_initial</a>;
-<a name="l00178"></a><a class="code" href="struct____attribute____.html#a25807fe9b750519fd0c395134c669e53">00178</a>   uint32_t __reserved_0384[3];
+<a name="l00177"></a><a class="code" href="structlocal__apic__t.html#a6fd99155d685e6b0f790f6aa38fa35d7">00177</a>   uint32_t <a class="code" href="structlocal__apic__t.html#a6fd99155d685e6b0f790f6aa38fa35d7">timer_initial</a>;
+<a name="l00178"></a><a class="code" href="structlocal__apic__t.html#aaa69e9c967b71d21bcb150e9e1158893">00178</a>   uint32_t __reserved_0384[3];
 <a name="l00179"></a>00179 
 <a name="l00180"></a>00180 <span class="comment">// 0x0390 Current Count Register (for Timer) RO</span>
 <a name="l00181"></a>00181   <span class="keyword">const</span>
-<a name="l00182"></a><a class="code" href="struct____attribute____.html#ae85be897b299f7453cd549944bb44be2">00182</a>   uint32_t <a class="code" href="struct____attribute____.html#ae85be897b299f7453cd549944bb44be2">timer_current</a>;
-<a name="l00183"></a><a class="code" href="struct____attribute____.html#a1f60ccb56c4699ca59dbca0e96b59e9a">00183</a>   uint32_t __reserved_0394[3];
+<a name="l00182"></a><a class="code" href="structlocal__apic__t.html#aad7d187882f869fe9df331cc125f2b14">00182</a>   uint32_t <a class="code" href="structlocal__apic__t.html#aad7d187882f869fe9df331cc125f2b14">timer_current</a>;
+<a name="l00183"></a><a class="code" href="structlocal__apic__t.html#a93898760cbf39ed0980d579379f9292c">00183</a>   uint32_t __reserved_0394[3];
 <a name="l00184"></a>00184   
 <a name="l00185"></a>00185 <span class="comment">// 0x03A0 - 0x03D0 Reserved</span>
-<a name="l00186"></a><a class="code" href="struct____attribute____.html#ab71801b257b035ee81abb00f46fcff7c">00186</a>   uint32_t __reserved_03A0[4*4];
+<a name="l00186"></a><a class="code" href="structlocal__apic__t.html#a78c2b46f4e1202e1de5045e497709169">00186</a>   uint32_t __reserved_03A0[4*4];
 <a name="l00187"></a>00187   
 <a name="l00188"></a>00188 <span class="comment">// 0x03E0 Divide Configuration Register (for Timer)</span>
-<a name="l00189"></a><a class="code" href="struct____attribute____.html#a9f8ae65f1b20e9c7504bc0a1732c31fb">00189</a>   uint32_t divisor : 4,
+<a name="l00189"></a><a class="code" href="structlocal__apic__t.html#a04a5a46fbbe7bfad81d82bce905fd4b1">00189</a>   uint32_t divisor : 4,
 <a name="l00190"></a>00190           __reserved_03E0 : 28;
-<a name="l00191"></a><a class="code" href="struct____attribute____.html#a8af9c7205198d25d9d7864634c37201d">00191</a>   uint32_t __reserved_03E4[3];
+<a name="l00191"></a><a class="code" href="structlocal__apic__t.html#a84dbb503cc13aa759ebc91e8042baade">00191</a>   uint32_t __reserved_03E4[3];
 <a name="l00192"></a>00192   
-<a name="l00193"></a><a class="code" href="struct____attribute____.html#a78d1a75af9094dd72e4c564445fb9bd0">00193</a>   uint32_t __reserved_03F0[4];
+<a name="l00193"></a><a class="code" href="structlocal__apic__t.html#ac6053399e8fa2248a0c66950a1304e0c">00193</a>   uint32_t __reserved_03F0[4];
 <a name="l00194"></a>00194            
-<a name="l00195"></a>00195 } <a class="code" href="util_8h.html#acf8c839d8a7a12772ebd4b8a4c087034">__attribute__</a>((packed)) local_apic_t;
+<a name="l00195"></a>00195 } __attribute__((packed)) <a class="code" href="structlocal__apic__t.html">local_apic_t</a>;
 <a name="l00196"></a>00196 
 <a name="l00197"></a>00197 
 <a name="l00198"></a>00198 <span class="preprocessor">#endif</span>
@@ -307,7 +307,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="apic_8h.html">apic.h</a>      </li>
 
-    <li class="footer">Generated on Fri Feb 7 2014 11:19:37 for VOS by
+    <li class="footer">Generated on Fri Feb 7 2014 11:24:14 for VOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['mask',['mask',['../struct____attribute____.html#a85eb89db4b7d27994ecb9bf3cf27e173',1,'__attribute__']]],
-  ['max_5flvt_5fentries',['max_lvt_entries',['../struct____attribute____.html#a561c56346dd1288c02966854149eed5d',1,'__attribute__']]],
-  ['mode',['mode',['../struct____attribute____.html#a6bf802deed3f202b5579ba5546c73400',1,'__attribute__']]]
+  ['mask',['mask',['../structlocal__apic__t.html#a0daa54004511400dca83bc4cc0e380fe',1,'local_apic_t']]],
+  ['max_5flvt_5fentries',['max_lvt_entries',['../structlocal__apic__t.html#aa55c30fca20a8ad0fba3056be92e5c1c',1,'local_apic_t']]],
+  ['mode',['mode',['../structlocal__apic__t.html#afb1b4754bd9a1dc4ce445808d1a0bb61',1,'local_apic_t']]]
 ];

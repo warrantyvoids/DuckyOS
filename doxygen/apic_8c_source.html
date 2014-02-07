@@ -109,7 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00008"></a>00008   <span class="keywordflow">return</span> cpuid_test_feature(<a class="code" href="util_8h.html#a2a903dcc70d27a518a4e8632ee296730a7fa4170aae12fbc1642012ccba9855b0">CPUID_FEAT_EDX_APIC</a>);
 <a name="l00009"></a>00009 }
 <a name="l00010"></a>00010 
-<a name="l00011"></a>00011 <span class="keyword">static</span> local_apic_t * apic;
+<a name="l00011"></a>00011 <span class="keyword">static</span> <a class="code" href="structlocal__apic__t.html">local_apic_t</a> * apic;
 <a name="l00012"></a>00012 
 <a name="l00013"></a><a class="code" href="apic_8h.html#aceae0c9fdf4abbdc2996cf78ed44ba42">00013</a> <span class="keywordtype">void</span> <a class="code" href="apic_8c.html#aceae0c9fdf4abbdc2996cf78ed44ba42">apic_init</a>() {
 <a name="l00014"></a>00014 
@@ -170,7 +170,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00069"></a>00069 }
 <a name="l00070"></a>00070 
 <a name="l00071"></a><a class="code" href="apic_8h.html#a5c1c678e314c1796b3f04b59f0507a38">00071</a> <span class="keywordtype">void</span> <a class="code" href="apic_8c.html#a5c1c678e314c1796b3f04b59f0507a38">apic_send_eoi</a>() {
-<a name="l00072"></a>00072   apic-&gt;eoi = 0;
+<a name="l00072"></a>00072   apic-&gt;<a class="code" href="structlocal__apic__t.html#aee5fbbf1c4e8cc0ab1f54ef526d3547f">eoi</a> = 0;
 <a name="l00073"></a>00073 }
 </pre></div></div><!-- contents -->
 </div>
@@ -192,7 +192,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="apic_8c.html">apic.c</a>      </li>
 
-    <li class="footer">Generated on Fri Feb 7 2014 11:19:37 for VOS by
+    <li class="footer">Generated on Fri Feb 7 2014 11:24:14 for VOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -139,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00038"></a>00038                   <span class="stringliteral">&quot;mov %%eax, %%cr0\n&quot;</span> : : <span class="stringliteral">&quot;m&quot;</span> (pKernelpagedir) );
 <a name="l00039"></a>00039 }
 <a name="l00040"></a>00040 
-<a name="l00041"></a><a class="code" href="paging_8h.html#af48a57c5673c5651d8f2629d6e28f731">00041</a> <span class="keywordtype">void</span> * <a class="code" href="paging_8c.html#a38bb0b6b2b72902e128584677e71604a">paging_map</a>(<span class="keywordtype">void</span> * physical, uint16_t <a class="code" href="tables_8c.html#aa2585d779da0ab21273a8d92de9a0ebe">flags</a>) {
+<a name="l00041"></a><a class="code" href="paging_8h.html#af48a57c5673c5651d8f2629d6e28f731">00041</a> <span class="keywordtype">void</span> * <a class="code" href="paging_8c.html#a38bb0b6b2b72902e128584677e71604a">paging_map</a>(<span class="keywordtype">void</span> * physical, uint16_t flags) {
 <a name="l00042"></a>00042   
 <a name="l00043"></a>00043   uint32_t physaddr = (uint32_t)physical &amp; 0xFFFFF000;
 <a name="l00044"></a>00044   
@@ -172,7 +172,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="paging_8c.html">paging.c</a>      </li>
 
-    <li class="footer">Generated on Fri Feb 7 2014 11:19:37 for VOS by
+    <li class="footer">Generated on Fri Feb 7 2014 11:24:14 for VOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

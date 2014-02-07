@@ -114,28 +114,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00013"></a><a class="code" href="structgdt__entry.html#af8f88469b3301c3e777e97b470a97413">00013</a>         uint8_t <a class="code" href="structgdt__entry.html#af8f88469b3301c3e777e97b470a97413">access</a>;
 <a name="l00014"></a><a class="code" href="structgdt__entry.html#accb2a2ef318b0e4fbe2016eb8097947d">00014</a>         uint8_t <a class="code" href="structgdt__entry.html#accb2a2ef318b0e4fbe2016eb8097947d">granularity</a>;
 <a name="l00015"></a><a class="code" href="structgdt__entry.html#a96abeddea82dd23ff9e84d09230e31a2">00015</a>         uint8_t <a class="code" href="structgdt__entry.html#a96abeddea82dd23ff9e84d09230e31a2">base_high</a>;
-<a name="l00016"></a>00016 } <a class="code" href="util_8h.html#acf8c839d8a7a12772ebd4b8a4c087034">__attribute__</a>((packed));
-<a name="l00017"></a><a class="code" href="tables_8c.html#aa7ae5b5a918e00776ff07fb1c58a348d">00017</a>  
-<a name="l00018"></a><a class="code" href="tables_8c.html#a71e21ea67de59991e9a27666a1752a8f">00018</a> <span class="keyword">struct </span><a class="code" href="structgdt__ptr.html">gdt_ptr</a>
-<a name="l00019"></a><a class="code" href="tables_8c.html#a6b67e86f6de9204d76adab79069aec29">00019</a> {
-<a name="l00020"></a><a class="code" href="tables_8c.html#a8b0d6200bc639dd37ff68847a0adde5f">00020</a>         uint16_t <a class="code" href="structgdt__ptr.html#aafee15dc0249bc83b9a672e745c082d3">limit</a>;
-<a name="l00021"></a><a class="code" href="tables_8c.html#acfea365f69e71368a2db03333d4afd6f">00021</a>         uint32_t <a class="code" href="structgdt__ptr.html#a16f60fe5c3e4f983fa81da1abf5a9fe0">base</a>;
-<a name="l00022"></a><a class="code" href="tables_8c.html#af938fbfc9a941670e25f33864b29222b">00022</a> } <a class="code" href="util_8h.html#acf8c839d8a7a12772ebd4b8a4c087034">__attribute__</a>((packed));
-<a name="l00023"></a><a class="code" href="tables_8c.html#ab28e82ae69032cb4ad3ec3a0be3d7129">00023</a> 
-<a name="l00024"></a><a class="code" href="tables_8c.html#a0523cedff47e2441fc198b7770ec5d3f">00024</a> <span class="keyword">struct </span><a class="code" href="structidt__entry.html">idt_entry</a>
+<a name="l00016"></a>00016 } __attribute__((packed));
+<a name="l00017"></a>00017  
+<a name="l00018"></a><a class="code" href="structgdt__ptr.html">00018</a> <span class="keyword">struct </span><a class="code" href="structgdt__ptr.html">gdt_ptr</a>
+<a name="l00019"></a>00019 {
+<a name="l00020"></a><a class="code" href="structgdt__ptr.html#aafee15dc0249bc83b9a672e745c082d3">00020</a>         uint16_t <a class="code" href="structgdt__ptr.html#aafee15dc0249bc83b9a672e745c082d3">limit</a>;
+<a name="l00021"></a><a class="code" href="structgdt__ptr.html#a16f60fe5c3e4f983fa81da1abf5a9fe0">00021</a>         uint32_t <a class="code" href="structgdt__ptr.html#a16f60fe5c3e4f983fa81da1abf5a9fe0">base</a>;
+<a name="l00022"></a>00022 } __attribute__((packed));
+<a name="l00023"></a>00023 
+<a name="l00024"></a><a class="code" href="structidt__entry.html">00024</a> <span class="keyword">struct </span><a class="code" href="structidt__entry.html">idt_entry</a>
 <a name="l00025"></a>00025 {
 <a name="l00026"></a><a class="code" href="structidt__entry.html#abbde8c373c9f8fc21905210137aa616c">00026</a>         uint16_t <a class="code" href="structidt__entry.html#abbde8c373c9f8fc21905210137aa616c">base_low</a>;
 <a name="l00027"></a><a class="code" href="structidt__entry.html#a4cefe0d92bb5f6e53085fd6205e59ccd">00027</a>         uint16_t <a class="code" href="structidt__entry.html#a4cefe0d92bb5f6e53085fd6205e59ccd">selector</a>;
 <a name="l00028"></a><a class="code" href="structidt__entry.html#aeb67e4c95ce548014b91b7753fcc4f51">00028</a>         uint8_t <a class="code" href="structidt__entry.html#aeb67e4c95ce548014b91b7753fcc4f51">ignore_is_always_0</a>;
 <a name="l00029"></a><a class="code" href="structidt__entry.html#a6815d884869cb156401614bcfa344bea">00029</a>         uint8_t <a class="code" href="structidt__entry.html#a6815d884869cb156401614bcfa344bea">flags</a>;
 <a name="l00030"></a><a class="code" href="structidt__entry.html#af9a2fc81ef418bb3028f91966717fe76">00030</a>         uint16_t <a class="code" href="structidt__entry.html#af9a2fc81ef418bb3028f91966717fe76">base_high</a>;
-<a name="l00031"></a>00031 }  <a class="code" href="util_8h.html#acf8c839d8a7a12772ebd4b8a4c087034">__attribute__</a>((packed));
+<a name="l00031"></a>00031 }  __attribute__((packed));
 <a name="l00032"></a>00032 
-<a name="l00033"></a><a class="code" href="tables_8c.html#a1c44289c163c1460544d6ee0900d02ba">00033</a> <span class="keyword">struct </span><a class="code" href="structidt__ptr.html">idt_ptr</a>
-<a name="l00034"></a><a class="code" href="tables_8c.html#aa428cf0f6ad2ceb00918e70a0a0f74a6">00034</a> {
-<a name="l00035"></a><a class="code" href="tables_8c.html#aa2585d779da0ab21273a8d92de9a0ebe">00035</a>         uint16_t <a class="code" href="structidt__ptr.html#aff506a142b3e7718fdcebfaa4454b30f">limit</a>;
+<a name="l00033"></a><a class="code" href="structidt__ptr.html">00033</a> <span class="keyword">struct </span><a class="code" href="structidt__ptr.html">idt_ptr</a>
+<a name="l00034"></a>00034 {
+<a name="l00035"></a><a class="code" href="structidt__ptr.html#aff506a142b3e7718fdcebfaa4454b30f">00035</a>         uint16_t <a class="code" href="structidt__ptr.html#aff506a142b3e7718fdcebfaa4454b30f">limit</a>;
 <a name="l00036"></a><a class="code" href="structidt__ptr.html#a42d536f30447f4d4843d6b016d7a8ce7">00036</a>         uint32_t <a class="code" href="structidt__ptr.html#a42d536f30447f4d4843d6b016d7a8ce7">base</a>;
-<a name="l00037"></a>00037 } <a class="code" href="util_8h.html#acf8c839d8a7a12772ebd4b8a4c087034">__attribute__</a>((packed));
+<a name="l00037"></a>00037 } __attribute__((packed));
 <a name="l00038"></a>00038 <span class="comment">// We&#39;ll need at least 5 entries in our GDT...</span>
 <a name="l00039"></a>00039  
 <a name="l00040"></a><a class="code" href="tables_8c.html#aaecd9bba62346ee23bff7e6f5fac403b">00040</a> <span class="keyword">struct </span><a class="code" href="structgdt__entry.html">gdt_entry</a> <a class="code" href="tables_8c.html#aaecd9bba62346ee23bff7e6f5fac403b">gdt</a>[5];
@@ -144,7 +144,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00043"></a><a class="code" href="tables_8c.html#ad957db2b8798a929084c7eb810435cf0">00043</a> <span class="keyword">struct </span><a class="code" href="structidt__ptr.html">idt_ptr</a> <a class="code" href="tables_8c.html#ad957db2b8798a929084c7eb810435cf0">p_idt</a>;
 <a name="l00044"></a>00044  
 <a name="l00045"></a>00045 <span class="comment">// Very simple: fills a GDT entry using the parameters</span>
-<a name="l00046"></a><a class="code" href="tables_8h.html#a5cad259805a61afe1857aa648e76d30f">00046</a> <span class="keywordtype">void</span> <a class="code" href="tables_8c.html#a5cad259805a61afe1857aa648e76d30f">gdt_set_gate</a>(int32_t num, uint32_t <a class="code" href="tables_8c.html#a0523cedff47e2441fc198b7770ec5d3f">base</a>, uint32_t <a class="code" href="tables_8c.html#ab28e82ae69032cb4ad3ec3a0be3d7129">limit</a>, uint8_t <a class="code" href="tables_8c.html#a8b0d6200bc639dd37ff68847a0adde5f">access</a>, uint8_t gran)
+<a name="l00046"></a><a class="code" href="tables_8h.html#a5cad259805a61afe1857aa648e76d30f">00046</a> <span class="keywordtype">void</span> <a class="code" href="tables_8c.html#a5cad259805a61afe1857aa648e76d30f">gdt_set_gate</a>(int32_t num, uint32_t <a class="code" href="structidt__ptr.html#a42d536f30447f4d4843d6b016d7a8ce7">base</a>, uint32_t <a class="code" href="structidt__ptr.html#aff506a142b3e7718fdcebfaa4454b30f">limit</a>, uint8_t access, uint8_t gran)
 <a name="l00047"></a>00047 {
 <a name="l00048"></a>00048         <a class="code" href="tables_8c.html#aaecd9bba62346ee23bff7e6f5fac403b">gdt</a>[num].<a class="code" href="structgdt__entry.html#ade3b4a3948e6e475221de4e226f8579c">base_low</a> = (base &amp; 0xFFFF);
 <a name="l00049"></a>00049         <a class="code" href="tables_8c.html#aaecd9bba62346ee23bff7e6f5fac403b">gdt</a>[num].<a class="code" href="structgdt__entry.html#ab5c8ccda9d0651184c31089ce7bbdbae">base_middle</a> = (base &gt;&gt; 16) &amp; 0xFF;
@@ -154,7 +154,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00053"></a>00053         <a class="code" href="tables_8c.html#aaecd9bba62346ee23bff7e6f5fac403b">gdt</a>[num].<a class="code" href="structgdt__entry.html#accb2a2ef318b0e4fbe2016eb8097947d">granularity</a> = ((limit &gt;&gt; 16) &amp; 0x0F);
 <a name="l00054"></a>00054  
 <a name="l00055"></a>00055         <a class="code" href="tables_8c.html#aaecd9bba62346ee23bff7e6f5fac403b">gdt</a>[num].<a class="code" href="structgdt__entry.html#accb2a2ef318b0e4fbe2016eb8097947d">granularity</a> |= (gran &amp; 0xF0);
-<a name="l00056"></a>00056         <a class="code" href="tables_8c.html#aaecd9bba62346ee23bff7e6f5fac403b">gdt</a>[num].<a class="code" href="structgdt__entry.html#af8f88469b3301c3e777e97b470a97413">access</a> = <a class="code" href="tables_8c.html#a8b0d6200bc639dd37ff68847a0adde5f">access</a>;
+<a name="l00056"></a>00056         <a class="code" href="tables_8c.html#aaecd9bba62346ee23bff7e6f5fac403b">gdt</a>[num].<a class="code" href="structgdt__entry.html#af8f88469b3301c3e777e97b470a97413">access</a> = access;
 <a name="l00057"></a>00057 }
 <a name="l00058"></a>00058  
 <a name="l00059"></a>00059 <span class="comment">// Sets our 5 gates and installs the real GDT through the assembler function</span>
@@ -234,13 +234,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00133"></a>00133         <a class="code" href="tables_8c.html#a6e6a216cea4572c3169c0d11f16d7d01">idt_flush</a>( (uint32_t) &amp;<a class="code" href="tables_8c.html#ad957db2b8798a929084c7eb810435cf0">p_idt</a>);
 <a name="l00134"></a>00134 }
 <a name="l00135"></a>00135 
-<a name="l00136"></a><a class="code" href="tables_8h.html#a498f153edfbc59b873e0ae610c3b0335">00136</a> <span class="keywordtype">void</span> <a class="code" href="tables_8c.html#a3d3ffcf0b802f7ced59c8936e1978010">idt_set_gate</a>(uint8_t num, uint32_t <a class="code" href="tables_8c.html#a0523cedff47e2441fc198b7770ec5d3f">base</a>, uint16_t <a class="code" href="tables_8c.html#a1c44289c163c1460544d6ee0900d02ba">selector</a>, uint8_t <a class="code" href="tables_8c.html#aa2585d779da0ab21273a8d92de9a0ebe">flags</a>) {
+<a name="l00136"></a><a class="code" href="tables_8h.html#a498f153edfbc59b873e0ae610c3b0335">00136</a> <span class="keywordtype">void</span> <a class="code" href="tables_8c.html#a3d3ffcf0b802f7ced59c8936e1978010">idt_set_gate</a>(uint8_t num, uint32_t base, uint16_t <a class="code" href="structidt__entry.html#a4cefe0d92bb5f6e53085fd6205e59ccd">selector</a>, uint8_t <a class="code" href="structidt__entry.html#a6815d884869cb156401614bcfa344bea">flags</a>) {
 <a name="l00137"></a>00137         <a class="code" href="tables_8c.html#a45aea3b9652363cfde70bd3563928eca">idts</a>[num].<a class="code" href="structidt__entry.html#abbde8c373c9f8fc21905210137aa616c">base_low</a> = base &amp; 0xFFFF;
 <a name="l00138"></a>00138         <a class="code" href="tables_8c.html#a45aea3b9652363cfde70bd3563928eca">idts</a>[num].<a class="code" href="structidt__entry.html#af9a2fc81ef418bb3028f91966717fe76">base_high</a> = (base &gt;&gt; 16) &amp; 0xFFFF;
 <a name="l00139"></a>00139         
-<a name="l00140"></a>00140         <a class="code" href="tables_8c.html#a45aea3b9652363cfde70bd3563928eca">idts</a>[num].<a class="code" href="structidt__entry.html#a4cefe0d92bb5f6e53085fd6205e59ccd">selector</a> = <a class="code" href="tables_8c.html#a1c44289c163c1460544d6ee0900d02ba">selector</a>;
+<a name="l00140"></a>00140         <a class="code" href="tables_8c.html#a45aea3b9652363cfde70bd3563928eca">idts</a>[num].<a class="code" href="structidt__entry.html#a4cefe0d92bb5f6e53085fd6205e59ccd">selector</a> = <a class="code" href="structidt__entry.html#a4cefe0d92bb5f6e53085fd6205e59ccd">selector</a>;
 <a name="l00141"></a>00141         <a class="code" href="tables_8c.html#a45aea3b9652363cfde70bd3563928eca">idts</a>[num].<a class="code" href="structidt__entry.html#aeb67e4c95ce548014b91b7753fcc4f51">ignore_is_always_0</a> = 0;
-<a name="l00142"></a>00142         <a class="code" href="tables_8c.html#a45aea3b9652363cfde70bd3563928eca">idts</a>[num].<a class="code" href="structidt__entry.html#a6815d884869cb156401614bcfa344bea">flags</a> = <a class="code" href="tables_8c.html#aa2585d779da0ab21273a8d92de9a0ebe">flags</a>; <span class="comment">/* | 0x60; &lt;-- For privilige switching */</span> 
+<a name="l00142"></a>00142         <a class="code" href="tables_8c.html#a45aea3b9652363cfde70bd3563928eca">idts</a>[num].<a class="code" href="structidt__entry.html#a6815d884869cb156401614bcfa344bea">flags</a> = <a class="code" href="structidt__entry.html#a6815d884869cb156401614bcfa344bea">flags</a>; <span class="comment">/* | 0x60; &lt;-- For privilige switching */</span> 
 <a name="l00143"></a>00143 }
 <a name="l00144"></a>00144 
 </pre></div></div><!-- contents -->
@@ -263,7 +263,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="tables_8c.html">tables.c</a>      </li>
 
-    <li class="footer">Generated on Fri Feb 7 2014 11:19:37 for VOS by
+    <li class="footer">Generated on Fri Feb 7 2014 11:24:14 for VOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['access',['access',['../structgdt__entry.html#af8f88469b3301c3e777e97b470a97413',1,'gdt_entry::access()'],['../tables_8c.html#a8b0d6200bc639dd37ff68847a0adde5f',1,'access():&#160;tables.c']]],
-  ['apr',['apr',['../struct____attribute____.html#a9b84bdc0c547073acb0b4b1c5f4284dd',1,'__attribute__']]],
-  ['arg1',['arg1',['../struct____attribute____.html#a8e6bc12799cae814d6f6a1903cf38846',1,'__attribute__']]],
-  ['arg2',['arg2',['../struct____attribute____.html#ac8b68914bc548c9dc4b5c7ccbcef89d0',1,'__attribute__']]],
-  ['arg3',['arg3',['../struct____attribute____.html#a86f4778a76894bfd9897622ee000f554',1,'__attribute__']]],
-  ['arg4',['arg4',['../struct____attribute____.html#ae5f73955f5c7f58fa794314388e58b8e',1,'__attribute__']]]
+  ['access',['access',['../structgdt__entry.html#af8f88469b3301c3e777e97b470a97413',1,'gdt_entry']]],
+  ['apr',['apr',['../structlocal__apic__t.html#ac5788ae2cd9f665561d898ec2e62ea3f',1,'local_apic_t']]],
+  ['arg1',['arg1',['../structisr__args__t.html#af702e9f3801e361e3cdd970a6cf0addd',1,'isr_args_t']]],
+  ['arg2',['arg2',['../structisr__args__t.html#ac3303a984967dd2a25bb571245ea38c5',1,'isr_args_t']]],
+  ['arg3',['arg3',['../structisr__args__t.html#a86273cc0186881313b4b3c477257a7a6',1,'isr_args_t']]],
+  ['arg4',['arg4',['../structisr__args__t.html#a13e8b1c0fbeef09785c34aca80a1c3ec',1,'isr_args_t']]]
 ];

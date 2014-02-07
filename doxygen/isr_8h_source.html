@@ -124,12 +124,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00023"></a><a class="code" href="isr_8h.html#a587f058bf281246693f934ab414f7d52">00023</a> <span class="preprocessor"></span><span class="preprocessor">#define IRQ15 (IRQ_BASE + 15)</span>
 <a name="l00024"></a>00024 <span class="preprocessor"></span>
 <a name="l00025"></a>00025 
-<a name="l00026"></a>00026 <span class="keyword">typedef</span> <span class="keyword">struct </span>{
-<a name="l00027"></a><a class="code" href="struct____attribute____.html#a84f62ad7a346b54b68ec159ca290f934">00027</a>   uint32_t <a class="code" href="struct____attribute____.html#a84f62ad7a346b54b68ec159ca290f934">ds</a>;
-<a name="l00028"></a><a class="code" href="struct____attribute____.html#a5a5bf27a9f07570fd0f61b1c08401ed1">00028</a>   uint32_t edi, esi, ebp, <a class="code" href="struct____attribute____.html#a5a5bf27a9f07570fd0f61b1c08401ed1">esp</a>, arg2, arg4, arg3, arg1;
-<a name="l00029"></a><a class="code" href="struct____attribute____.html#ab9577fd365d66f9d6822cf7d6eeeef47">00029</a>   uint32_t <a class="code" href="struct____attribute____.html#ab9577fd365d66f9d6822cf7d6eeeef47">interrupt_id</a>, error_code;
-<a name="l00030"></a><a class="code" href="struct____attribute____.html#aa339540fe00ec196ec5c8c3e7479bbea">00030</a>   uint32_t eip, cs, eflags, <a class="code" href="struct____attribute____.html#aa339540fe00ec196ec5c8c3e7479bbea">useresp</a>, ss;
-<a name="l00031"></a>00031 } <a class="code" href="util_8h.html#acf8c839d8a7a12772ebd4b8a4c087034">__attribute__</a>((packed)) isr_args_t;
+<a name="l00026"></a><a class="code" href="structisr__args__t.html">00026</a> <span class="keyword">typedef</span> <span class="keyword">struct </span>{
+<a name="l00027"></a><a class="code" href="structisr__args__t.html#aa475b589732895f0982a5b8744505b4b">00027</a>   uint32_t <a class="code" href="structisr__args__t.html#aa475b589732895f0982a5b8744505b4b">ds</a>;
+<a name="l00028"></a><a class="code" href="structisr__args__t.html#afd7b05632a2e1b3c248ca724bc278f0c">00028</a>   uint32_t edi, esi, ebp, <a class="code" href="structisr__args__t.html#afd7b05632a2e1b3c248ca724bc278f0c">esp</a>, arg2, arg4, arg3, arg1;
+<a name="l00029"></a><a class="code" href="structisr__args__t.html#aa47ac06dc5ef49b8a1f18e464ead9b98">00029</a>   uint32_t <a class="code" href="structisr__args__t.html#aa47ac06dc5ef49b8a1f18e464ead9b98">interrupt_id</a>, error_code;
+<a name="l00030"></a><a class="code" href="structisr__args__t.html#a7f9b083a5a81849f58338830cabcf802">00030</a>   uint32_t eip, cs, eflags, <a class="code" href="structisr__args__t.html#a7f9b083a5a81849f58338830cabcf802">useresp</a>, ss;
+<a name="l00031"></a>00031 } __attribute__((packed)) <a class="code" href="structisr__args__t.html">isr_args_t</a>;
 <a name="l00032"></a>00032 
 <a name="l00033"></a>00033 <span class="keywordtype">void</span> <a class="code" href="irq_8c.html#a2ea31f33125954459edbe7f4d7971ffa">isr_init</a>();
 <a name="l00034"></a>00034 
@@ -162,7 +162,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="isr_8h.html">isr.h</a>      </li>
 
-    <li class="footer">Generated on Fri Feb 7 2014 11:19:37 for VOS by
+    <li class="footer">Generated on Fri Feb 7 2014 11:24:14 for VOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

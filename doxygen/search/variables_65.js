@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['ebp',['ebp',['../struct____attribute____.html#a04053c2abe64448a7ec0753d897411c6',1,'__attribute__']]],
-  ['edi',['edi',['../struct____attribute____.html#a5df59a778ccd0faeb5656e601b733863',1,'__attribute__']]],
-  ['eflags',['eflags',['../struct____attribute____.html#a1216d512e08a116aa75decdfffca08a0',1,'__attribute__']]],
-  ['eip',['eip',['../struct____attribute____.html#a2ef0b57bd458713dffadeab9f328f456',1,'__attribute__']]],
-  ['enabled',['enabled',['../struct____attribute____.html#a26464f36c291513bfaeb6765b6de6ec7',1,'__attribute__']]],
-  ['eoi',['eoi',['../struct____attribute____.html#adee65f2ac8ff81341b71f63f73c63759',1,'__attribute__']]],
-  ['eoi_5fbroadcast_5fsuppression',['eoi_broadcast_suppression',['../struct____attribute____.html#aa0dbf1c8cfaddbd0bf129f9a85c3c937',1,'__attribute__']]],
-  ['error',['error',['../struct____attribute____.html#a1defffcb1cf202fdcff7427215b12ea4',1,'__attribute__']]],
-  ['error_5fcode',['error_code',['../struct____attribute____.html#a86f8e7570d3469c031183bedeb36cfe3',1,'__attribute__']]],
-  ['esi',['esi',['../struct____attribute____.html#a7d3950f897e318cbd8255f1cb4ee6f75',1,'__attribute__']]],
-  ['esp',['esp',['../struct____attribute____.html#a5a5bf27a9f07570fd0f61b1c08401ed1',1,'__attribute__']]]
+  ['ebp',['ebp',['../structisr__args__t.html#acdad480398b5072c59ef32faa3f93312',1,'isr_args_t']]],
+  ['edi',['edi',['../structisr__args__t.html#a783a0561a4b7c3f50af820d4a0ea7866',1,'isr_args_t']]],
+  ['eflags',['eflags',['../structisr__args__t.html#a004fc732d1717d190786b92715c1e767',1,'isr_args_t']]],
+  ['eip',['eip',['../structisr__args__t.html#abc7d4ac78b9642738381ed70679745cc',1,'isr_args_t']]],
+  ['enabled',['enabled',['../structlocal__apic__t.html#a0e7fc28a3cd02d410f0841cb0c84f2d4',1,'local_apic_t']]],
+  ['eoi',['eoi',['../structlocal__apic__t.html#aee5fbbf1c4e8cc0ab1f54ef526d3547f',1,'local_apic_t']]],
+  ['eoi_5fbroadcast_5fsuppression',['eoi_broadcast_suppression',['../structlocal__apic__t.html#ad0ccf92d0e21e0ff3bfdbcb424a6dfeb',1,'local_apic_t']]],
+  ['error',['error',['../structlocal__apic__t.html#a43711e0bbb729c4f8cf082c27473665d',1,'local_apic_t']]],
+  ['error_5fcode',['error_code',['../structisr__args__t.html#a30d45e4a84c48df9311110251bcdf71b',1,'isr_args_t']]],
+  ['esi',['esi',['../structisr__args__t.html#a89a76ef2c575128610985bab14690c4f',1,'isr_args_t']]],
+  ['esp',['esp',['../structisr__args__t.html#afd7b05632a2e1b3c248ca724bc278f0c',1,'isr_args_t']]]
 ];

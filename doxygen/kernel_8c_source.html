@@ -114,36 +114,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00013"></a>00013 <span class="preprocessor"></span><span class="preprocessor">#error &quot;You are not using a cross-compiler, you will most certainly run into trouble&quot;</span>
 <a name="l00014"></a>00014 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00015"></a>00015 <span class="preprocessor"></span>
-<a name="l00016"></a>00016 <span class="keyword">static</span> <span class="keywordtype">void</span> protection_fault( isr_args_t args ) {
+<a name="l00016"></a>00016 <span class="keyword">static</span> <span class="keywordtype">void</span> protection_fault( <a class="code" href="structisr__args__t.html">isr_args_t</a> args ) {
 <a name="l00017"></a>00017   <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;General protection fault! type = &quot;</span>);
-<a name="l00018"></a>00018   <a class="code" href="terminal_8c.html#acc8f6cfc190914a5344dc3314aedfcff">terminal_writehexdigits</a>( args.error_code );
+<a name="l00018"></a>00018   <a class="code" href="terminal_8c.html#acc8f6cfc190914a5344dc3314aedfcff">terminal_writehexdigits</a>( args.<a class="code" href="structisr__args__t.html#a30d45e4a84c48df9311110251bcdf71b">error_code</a> );
 <a name="l00019"></a>00019   <a class="code" href="terminal_8c.html#a0e77ef8710654966af44f69becffcd80">terminal_putchar</a>(<span class="charliteral">&#39;\n&#39;</span>);
 <a name="l00020"></a>00020   <span class="keywordflow">while</span> (1);
 <a name="l00021"></a>00021 }
 <a name="l00022"></a>00022 
-<a name="l00023"></a>00023 <span class="keyword">static</span> <span class="keywordtype">void</span> double_fault ( isr_args_t args ) {
+<a name="l00023"></a>00023 <span class="keyword">static</span> <span class="keywordtype">void</span> double_fault ( <a class="code" href="structisr__args__t.html">isr_args_t</a> args ) {
 <a name="l00024"></a>00024   <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;A double fault has occurred while serving int &quot;</span>);
-<a name="l00025"></a>00025   <a class="code" href="terminal_8c.html#acc8f6cfc190914a5344dc3314aedfcff">terminal_writehexdigits</a>( args.error_code );
+<a name="l00025"></a>00025   <a class="code" href="terminal_8c.html#acc8f6cfc190914a5344dc3314aedfcff">terminal_writehexdigits</a>( args.<a class="code" href="structisr__args__t.html#a30d45e4a84c48df9311110251bcdf71b">error_code</a> );
 <a name="l00026"></a>00026   <a class="code" href="terminal_8c.html#a0e77ef8710654966af44f69becffcd80">terminal_putchar</a>(<span class="charliteral">&#39;\n&#39;</span>);
 <a name="l00027"></a>00027 }
 <a name="l00028"></a>00028 
-<a name="l00029"></a><a class="code" href="kernel_8c.html#acff117abacde113c11bead21ff29ef01">00029</a> <span class="keywordtype">void</span> <a class="code" href="arch_8h.html#a3ee6ccba2c79152fe3062110d6054da8">unhandled_interrupt</a>( isr_args_t args ) {
+<a name="l00029"></a><a class="code" href="kernel_8c.html#acff117abacde113c11bead21ff29ef01">00029</a> <span class="keywordtype">void</span> <a class="code" href="arch_8h.html#a3ee6ccba2c79152fe3062110d6054da8">unhandled_interrupt</a>( <a class="code" href="structisr__args__t.html">isr_args_t</a> args ) {
 <a name="l00030"></a>00030   <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;Unhandled interrupt. Type = &quot;</span>);
-<a name="l00031"></a>00031   <a class="code" href="terminal_8c.html#acc8f6cfc190914a5344dc3314aedfcff">terminal_writehexdigits</a>( args.interrupt_id );
+<a name="l00031"></a>00031   <a class="code" href="terminal_8c.html#acc8f6cfc190914a5344dc3314aedfcff">terminal_writehexdigits</a>( args.<a class="code" href="structisr__args__t.html#aa47ac06dc5ef49b8a1f18e464ead9b98">interrupt_id</a> );
 <a name="l00032"></a>00032   <a class="code" href="terminal_8c.html#a0e77ef8710654966af44f69becffcd80">terminal_putchar</a>(<span class="charliteral">&#39;\n&#39;</span>);
 <a name="l00033"></a>00033 }
 <a name="l00034"></a>00034 
-<a name="l00035"></a>00035 <span class="keyword">static</span> <span class="keywordtype">void</span> int_hang ( isr_args_t args ) {
+<a name="l00035"></a>00035 <span class="keyword">static</span> <span class="keywordtype">void</span> int_hang ( <a class="code" href="structisr__args__t.html">isr_args_t</a> args ) {
 <a name="l00036"></a>00036   <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;Stopping. Recieved int &quot;</span>);
-<a name="l00037"></a>00037   <a class="code" href="terminal_8c.html#acc8f6cfc190914a5344dc3314aedfcff">terminal_writehexdigits</a>(args.interrupt_id);
+<a name="l00037"></a>00037   <a class="code" href="terminal_8c.html#acc8f6cfc190914a5344dc3314aedfcff">terminal_writehexdigits</a>(args.<a class="code" href="structisr__args__t.html#aa47ac06dc5ef49b8a1f18e464ead9b98">interrupt_id</a>);
 <a name="l00038"></a>00038   <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot; with error code &quot;</span>);
-<a name="l00039"></a>00039   <a class="code" href="terminal_8c.html#a95fe4654de845eab958ed3d887a5e0fd">terminal_writehex</a>(args.error_code);
+<a name="l00039"></a>00039   <a class="code" href="terminal_8c.html#a95fe4654de845eab958ed3d887a5e0fd">terminal_writehex</a>(args.<a class="code" href="structisr__args__t.html#a30d45e4a84c48df9311110251bcdf71b">error_code</a>);
 <a name="l00040"></a>00040   <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;.\n&quot;</span>);
 <a name="l00041"></a>00041   
 <a name="l00042"></a>00042   <span class="keywordflow">while</span> (1);
 <a name="l00043"></a>00043 }
 <a name="l00044"></a>00044 
-<a name="l00045"></a>00045 <span class="keyword">static</span> <span class="keywordtype">void</span> timer_interrupt( isr_args_t args ) {
+<a name="l00045"></a>00045 <span class="keyword">static</span> <span class="keywordtype">void</span> timer_interrupt( <a class="code" href="structisr__args__t.html">isr_args_t</a> args ) {
 <a name="l00046"></a>00046   <span class="keyword">static</span> uint32_t timerval = 0;
 <a name="l00047"></a>00047   <a class="code" href="terminal_8c.html#a09ed5506d8ae907e2c8e0c96f6d1a928">terminal_writestring</a>(<span class="stringliteral">&quot;Timer &quot;</span>);
 <a name="l00048"></a>00048   <a class="code" href="terminal_8c.html#a95fe4654de845eab958ed3d887a5e0fd">terminal_writehex</a>(timerval++);
@@ -227,7 +227,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="kernel_8c.html">kernel.c</a>      </li>
 
-    <li class="footer">Generated on Fri Feb 7 2014 11:19:37 for VOS by
+    <li class="footer">Generated on Fri Feb 7 2014 11:24:14 for VOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

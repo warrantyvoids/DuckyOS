@@ -11,6 +11,5 @@ var util_8h =
     [ "outw", "util_8h.html#ad081f4511cc64f96fdf52abaccf344c1", null ],
     [ "rdmsr", "util_8h.html#aa637f3a7fc2e545adaf0c1bb52588058", null ],
     [ "udelay", "util_8h.html#a1191bd3f715c8fbfe59725907766885c", null ],
-    [ "wrmsr", "util_8h.html#a2552ceb7b03015561ce90b501075e733", null ],
-    [ "__attribute__", "util_8h.html#acf8c839d8a7a12772ebd4b8a4c087034", null ]
+    [ "wrmsr", "util_8h.html#a2552ceb7b03015561ce90b501075e733", null ]
 ];

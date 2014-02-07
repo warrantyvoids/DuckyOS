@@ -1,14 +1,15 @@
 var searchData=
 [
-  ['level',['level',['../struct____attribute____.html#a0645277562bad527c37ca401592c16fc',1,'__attribute__']]],
-  ['limit',['limit',['../structgdt__ptr.html#aafee15dc0249bc83b9a672e745c082d3',1,'gdt_ptr::limit()'],['../structidt__ptr.html#aff506a142b3e7718fdcebfaa4454b30f',1,'idt_ptr::limit()'],['../tables_8c.html#ab28e82ae69032cb4ad3ec3a0be3d7129',1,'limit():&#160;tables.c']]],
-  ['limit_5flow',['limit_low',['../structgdt__entry.html#ad1cb239b48c0bfb34a017d5deb87e3ff',1,'gdt_entry::limit_low()'],['../tables_8c.html#aa7ae5b5a918e00776ff07fb1c58a348d',1,'limit_low():&#160;tables.c']]],
-  ['logical_5fdestination',['logical_destination',['../struct____attribute____.html#ad963675be3552a824c843d09aab2d72b',1,'__attribute__']]],
-  ['lvt_5fcmci',['lvt_cmci',['../struct____attribute____.html#a3cdbd008d9f249e8ebca709f614bd357',1,'__attribute__']]],
-  ['lvt_5ferror',['lvt_error',['../struct____attribute____.html#a35bad52e516caa73d7929ca5152c0a86',1,'__attribute__']]],
-  ['lvt_5flint0',['lvt_lint0',['../struct____attribute____.html#a158908bcbbaed864e1b003b160a04705',1,'__attribute__']]],
-  ['lvt_5flint1',['lvt_lint1',['../struct____attribute____.html#a57d09b682644ea24b15f057cec2f9aa1',1,'__attribute__']]],
-  ['lvt_5fperfm',['lvt_perfm',['../struct____attribute____.html#acb6c38b86a2a5fda95b0b5797daa07bd',1,'__attribute__']]],
-  ['lvt_5ftherm',['lvt_therm',['../struct____attribute____.html#abeebf387878c7672af916951be6e4b41',1,'__attribute__']]],
-  ['lvt_5ftimer',['lvt_timer',['../struct____attribute____.html#a56cfc57cd9c9e0d4d829683b8fe4a07d',1,'__attribute__']]]
+  ['level',['level',['../structlocal__apic__t.html#a96012c2562e961e138739559951e1323',1,'local_apic_t']]],
+  ['limit',['limit',['../structgdt__ptr.html#aafee15dc0249bc83b9a672e745c082d3',1,'gdt_ptr::limit()'],['../structidt__ptr.html#aff506a142b3e7718fdcebfaa4454b30f',1,'idt_ptr::limit()']]],
+  ['limit_5flow',['limit_low',['../structgdt__entry.html#ad1cb239b48c0bfb34a017d5deb87e3ff',1,'gdt_entry']]],
+  ['local_5fapic_5ft',['local_apic_t',['../structlocal__apic__t.html',1,'']]],
+  ['logical_5fdestination',['logical_destination',['../structlocal__apic__t.html#a70357f1758a96a405e87fe5f68d71180',1,'local_apic_t']]],
+  ['lvt_5fcmci',['lvt_cmci',['../structlocal__apic__t.html#ad958e6e4bbafd3742d21926a4d8b3301',1,'local_apic_t']]],
+  ['lvt_5ferror',['lvt_error',['../structlocal__apic__t.html#ac3fdc42ba9b941dc4fdd8ec1142b8b60',1,'local_apic_t']]],
+  ['lvt_5flint0',['lvt_lint0',['../structlocal__apic__t.html#a122b562eccc05d672d4a7bbd05f7a2fc',1,'local_apic_t']]],
+  ['lvt_5flint1',['lvt_lint1',['../structlocal__apic__t.html#a6ffbad1413fcb76be2a268fd05d78ec9',1,'local_apic_t']]],
+  ['lvt_5fperfm',['lvt_perfm',['../structlocal__apic__t.html#aa669e0ba081190b7f6f10d9761d265ef',1,'local_apic_t']]],
+  ['lvt_5ftherm',['lvt_therm',['../structlocal__apic__t.html#a596312f9008c166d194ab553cc2fc01e',1,'local_apic_t']]],
+  ['lvt_5ftimer',['lvt_timer',['../structlocal__apic__t.html#a6813396b663658e6fc872ce9460fef1f',1,'local_apic_t']]]
 ];
