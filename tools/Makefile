@@ -1,8 +1,10 @@
 BINUTIL_VERSION = 2.24
-GRUB_VERSION = 2.00
+#GRUB_VERSION = 2.00
+GRUB_VERSION = grub-2.02-beta2
 FETCH = wget
 BINUTILS_MIRROR = http://ftp.gnu.org/gnu/binutils/
-GRUB_MIRROR = http://ftp.gnu.org/gnu/grub/
+#GRUB_MIRROR = http://ftp.gnu.org/gnu/grub/
+GRUB_MIRROR = http://git.savannah.gnu.org/cgit/grub.git/snapshot/
 ARCH ?= i686
 ARCHS ?= i686 x86_64 arm
 
@@ -59,6 +61,7 @@ binutils.tar: binutils.tar.bz2
 
 grub-$(ARCH)/grub-mkrescue: #<-- We can clean up the mess and still have grub working...
 	make extract-grub
+	cd grub-$(GRUB_VERSION); ./autogen.sh
 	rm -rf grub-$(ARCH)
 	mkdir grub-$(ARCH)
 	cd grub-$(ARCH); \

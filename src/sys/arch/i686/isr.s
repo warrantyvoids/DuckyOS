@@ -22,7 +22,13 @@ irq\id:
 	cli
 	pushl $0
 	pushl $\isr
-	jmp irq_common
+	jmp irq_common_pic
+.global irq_a_\id
+irq_a_\id:
+	cli
+	pushl $0
+	pushl $\isr
+	jmp irq_common_apic
 .endm
 
 // Implement handlers for all ISRs with processor exception codes
@@ -83,7 +89,7 @@ isr_common:
 	sti
 	iret
 
-irq_common:
+irq_common_pic:
 	pusha
 	movw %ds, %ax
 	pushl %eax
@@ -94,7 +100,31 @@ irq_common:
 	movw %ax, %fs
 	movw %ax, %gs
 	
-	call irq_handler
+	call irq_handler_pic
+	
+	popl %eax
+	movw %ax, %ds
+	movw %ax, %es
+	movw %ax, %fs
+	movw %ax, %gs
+
+	popa
+	addl $8, %esp
+	sti
+	iret
+
+irq_common_apic:
+	pusha
+	movw %ds, %ax
+	pushl %eax
+	
+	movw $0x10, %ax
+	movw %ax, %ds
+	movw %ax, %es
+	movw %ax, %fs
+	movw %ax, %gs
+	
+	call irq_handler_apic
 	
 	popl %eax
 	movw %ax, %ds

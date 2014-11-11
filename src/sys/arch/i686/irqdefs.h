@@ -33,6 +33,7 @@ extern void isr30();
 extern void isr31();
 extern void isr32();
 
+//PIC versions
 extern void irq0();
 extern void irq1();
 extern void irq2();
@@ -49,3 +50,21 @@ extern void irq12();
 extern void irq13();
 extern void irq14();
 extern void irq15();
+
+//APIC versions
+extern void irq_a_0();
+extern void irq_a_1();
+extern void irq_a_2();
+extern void irq_a_3();
+extern void irq_a_4();
+extern void irq_a_5();
+extern void irq_a_6();
+extern void irq_a_7();
+extern void irq_a_8();
+extern void irq_a_9();
+extern void irq_a_10();
+extern void irq_a_11();
+extern void irq_a_12();
+extern void irq_a_13();
+extern void irq_a_14();
+extern void irq_a_15();

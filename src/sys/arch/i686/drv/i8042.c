@@ -1,6 +1,8 @@
 #include "i8042.h"
 #include <arch/arch.h>
 #include <terminal.h>
+#include <keyboard.h>
+#include "../pic.h"
 
 #define i8042_DATA  0x60
 #define i8042_STATUS 0x64
@@ -53,10 +55,37 @@ inline static bool wait_rx() {
 
 static bool has_secondary_channel;
 
+static void i8042_irq(isr_args_t args) {
+  //terminal_writestring("Ohai!\n");
+  unsigned char status;
+  uint16_t keycode;
+  
+  status = inb( i8042_COMMAND );
+  if ( status & i8042_STATUS_OUTBUF ) { //data incoming!
+    keycode = inb( i8042_DATA );
+    
+    //is more coming?
+    if (keycode == KEYBOARD_TBF) {
+    
+      keycode <<= 8;
+      keycode |= inb( i8042_DATA);
+      
+    }
+
+    keyboard_handle ( keycode );
+
+  }
+}
+
 #define PRINT_EXIT(msg) {terminal_writestring(msg); return; }
 #define TIMEOUT_EXIT() {terminal_writestring("Timeout occurred during PS/2 initialization.\n"); return; }
 
 void i8042_init() {
+  terminal_writestring("i8042!\n");
+  isr_set_handler( IRQ1, i8042_irq );
+  pic_enable_line( 1 );
+//  return;
+  
   uint8_t in;  
   outb(i8042_COMMAND, i8042_CMD_DISABLE_A);
   
@@ -76,8 +105,8 @@ void i8042_init() {
     PRINT_EXIT("i8042 controller did not respond.\n");
   
   in = inb(i8042_DATA);    //Clear \/ these bits.
-  in &= ~ ( i8042_CMD0_A_IRQEN | i8042_CMD0_B_IRQEN | i8042_CMD0_A_TRANSL );
-//  has_secondary_channel = (in & i8042_CMD0_B_CLK) != 0;
+//  in &= ~ ( i8042_CMD0_A_IRQEN | i8042_CMD0_B_IRQEN | i8042_CMD0_A_TRANSL );
+  //has_secondary_channel = (in & i8042_CMD0_B_CLK) != 0;
   
   if (!wait_tx())  //And write em back
     PRINT_EXIT("i8042 controller is retarded.\n");
@@ -105,10 +134,11 @@ void i8042_init() {
   terminal_writestring("Selftest completed.\n");
   
   //We're tested nauw. Gofix keyboard/mouse.
-  //terminal_writestring(has_secondary_channel ? "Single channel controller.\n" : "Dual channel controller.\n");
+  terminal_writestring(has_secondary_channel ? "Single channel controller.\n" : "Dual channel controller.\n");
   
   if (!wait_tx())
      TIMEOUT_EXIT();
+  outb(i8042_COMMAND, i8042_CMD_ENABLE_A);
   outb(i8042_COMMAND, i8042_CMD_ENABLE_B);
   
 }

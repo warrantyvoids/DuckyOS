@@ -4,11 +4,17 @@
 #include "paging.h"
 #include "../../terminal.h"
 
+
 bool apic_is_available() {
+#ifdef i686_USE_APIC
   return cpuid_test_feature(CPUID_FEAT_EDX_APIC);
+#else
+  return false;
+#endif
 }
 
 static local_apic_t * apic;
+//static io_apic_t * apic;
 
 void apic_init() {
 
@@ -62,7 +68,7 @@ void apic_init() {
   apic->spurious_int_vector = 39;
   apic->enabled = 1;
   apic->lvt_timer.vector = 32;
-  apic->lvt_timer.mode = 1; // Periodic
+  apic->lvt_timer.mode = APIC_TIMER_ONESHOT; // Periodic
   apic->divisor = 0b1011;
   apic->timer_initial = 1000;
   apic->lvt_timer.mask = 0; //GO!  

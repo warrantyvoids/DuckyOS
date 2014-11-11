@@ -4,6 +4,7 @@
 #include "pit.h"
 #include "tables.h"
 #include "paging.h"
+#include "drv/i8042.h"
 
 void arch_entry() { 
   paging_init();
@@ -15,6 +16,8 @@ void arch_entry() {
 }
 
 void arch_init() {
+  i8042_init();
+
   if (apic_is_available()) {
     apic_init();
   } else {
@@ -25,6 +28,6 @@ void arch_init() {
 }
 
 void arch_postinit() {
-
+  
 //  pic_enable_line(0);
 }

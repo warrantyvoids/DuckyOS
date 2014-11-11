@@ -1,5 +1,6 @@
 // Defines the structures of a GDT entry and of a GDT pointer
 #include <stdint.h>
+#include "apic.h"
 #include "tables.h"
 #include "isr.h"
 #include "irqdefs.h"
@@ -113,22 +114,43 @@ void idt_init() {
   	idt_set_gate( 30, (uint32_t) &isr30, 0x08, 0x8E);
   	idt_set_gate( 31, (uint32_t) &isr31, 0x08, 0x8E);
 
-  	idt_set_gate( IRQ0, (uint32_t) &irq0, 0x08, 0x8E);
-  	idt_set_gate( IRQ1, (uint32_t) &irq1, 0x08, 0x8E);
-  	idt_set_gate( IRQ2, (uint32_t) &irq2, 0x08, 0x8E);
-  	idt_set_gate( IRQ3, (uint32_t) &irq3, 0x08, 0x8E);
-  	idt_set_gate( IRQ4, (uint32_t) &irq4, 0x08, 0x8E);
-  	idt_set_gate( IRQ5, (uint32_t) &irq5, 0x08, 0x8E);
-  	idt_set_gate( IRQ6, (uint32_t) &irq6, 0x08, 0x8E);
-  	idt_set_gate( IRQ7, (uint32_t) &irq7, 0x08, 0x8E);
-  	idt_set_gate( IRQ8, (uint32_t) &irq8, 0x08, 0x8E);
-  	idt_set_gate( IRQ9, (uint32_t) &irq9, 0x08, 0x8E);
-  	idt_set_gate( IRQ10, (uint32_t) &irq10, 0x08, 0x8E);
-  	idt_set_gate( IRQ11, (uint32_t) &irq11, 0x08, 0x8E);
-  	idt_set_gate( IRQ12, (uint32_t) &irq12, 0x08, 0x8E);
-  	idt_set_gate( IRQ13, (uint32_t) &irq13, 0x08, 0x8E);
-  	idt_set_gate( IRQ14, (uint32_t) &irq14, 0x08, 0x8E);
-  	idt_set_gate( IRQ15, (uint32_t) &irq15, 0x08, 0x8E);
+  	if (apic_is_available()) {
+  	  idt_set_gate( IRQ0, (uint32_t) &irq_a_0, 0x08, 0x8E);
+    	  idt_set_gate( IRQ1, (uint32_t) &irq_a_1, 0x08, 0x8E);
+  	  idt_set_gate( IRQ2, (uint32_t) &irq_a_2, 0x08, 0x8E);
+  	  idt_set_gate( IRQ3, (uint32_t) &irq_a_3, 0x08, 0x8E);
+  	  idt_set_gate( IRQ4, (uint32_t) &irq_a_4, 0x08, 0x8E);
+  	  idt_set_gate( IRQ5, (uint32_t) &irq_a_5, 0x08, 0x8E);
+  	  idt_set_gate( IRQ6, (uint32_t) &irq_a_6, 0x08, 0x8E);
+  	  idt_set_gate( IRQ7, (uint32_t) &irq_a_7, 0x08, 0x8E);
+  	  idt_set_gate( IRQ8, (uint32_t) &irq_a_8, 0x08, 0x8E);
+  	  idt_set_gate( IRQ9, (uint32_t) &irq_a_9, 0x08, 0x8E);
+  	  idt_set_gate( IRQ10, (uint32_t) &irq_a_10, 0x08, 0x8E);
+  	  idt_set_gate( IRQ11, (uint32_t) &irq_a_11, 0x08, 0x8E);
+  	  idt_set_gate( IRQ12, (uint32_t) &irq_a_12, 0x08, 0x8E);
+  	  idt_set_gate( IRQ13, (uint32_t) &irq_a_13, 0x08, 0x8E);
+  	  idt_set_gate( IRQ14, (uint32_t) &irq_a_14, 0x08, 0x8E);
+  	  idt_set_gate( IRQ15, (uint32_t) &irq_a_15, 0x08, 0x8E);
+  	} else {
+  	  idt_set_gate( IRQ0, (uint32_t) &irq0, 0x08, 0x8E);
+    	  idt_set_gate( IRQ1, (uint32_t) &irq1, 0x08, 0x8E);
+  	  idt_set_gate( IRQ2, (uint32_t) &irq2, 0x08, 0x8E);
+  	  idt_set_gate( IRQ3, (uint32_t) &irq3, 0x08, 0x8E);
+  	  idt_set_gate( IRQ4, (uint32_t) &irq4, 0x08, 0x8E);
+  	  idt_set_gate( IRQ5, (uint32_t) &irq5, 0x08, 0x8E);
+  	  idt_set_gate( IRQ6, (uint32_t) &irq6, 0x08, 0x8E);
+  	  idt_set_gate( IRQ7, (uint32_t) &irq7, 0x08, 0x8E);
+  	  idt_set_gate( IRQ8, (uint32_t) &irq8, 0x08, 0x8E);
+  	  idt_set_gate( IRQ9, (uint32_t) &irq9, 0x08, 0x8E);
+  	  idt_set_gate( IRQ10, (uint32_t) &irq10, 0x08, 0x8E);
+  	  idt_set_gate( IRQ11, (uint32_t) &irq11, 0x08, 0x8E);
+  	  idt_set_gate( IRQ12, (uint32_t) &irq12, 0x08, 0x8E);
+  	  idt_set_gate( IRQ13, (uint32_t) &irq13, 0x08, 0x8E);
+  	  idt_set_gate( IRQ14, (uint32_t) &irq14, 0x08, 0x8E);
+  	  idt_set_gate( IRQ15, (uint32_t) &irq15, 0x08, 0x8E);
+  	
+  	}
+  	
 
   	idt_flush( (uint32_t) &p_idt);
 }

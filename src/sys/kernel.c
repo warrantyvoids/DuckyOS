@@ -53,14 +53,13 @@ static void timer_interrupt( isr_args_t args ) {
 #if defined(__cplusplus)
 extern "C" /* Use C linkage for kernel_main. */
 #endif
-void kernel_main()
-{
+void kernel_main() {
         arch_entry();
 
 	terminal_initialize();
 	terminal_writestring("Kernel initialized.\n");
 	terminal_writestring("VGA Enabled!\n");
-     
+
 //        isr_set_handler(3, &timer_interrupt);        
         isr_set_handler(IRQ_TIMER, &timer_interrupt);
         isr_set_handler(0x0D, &protection_fault);
@@ -93,6 +92,8 @@ void kernel_main()
           terminal_writestring("No ACPI!\n");
         }
         
+
+        pci_init();
 
 //	asm volatile (" int $0x01 ");
 //	asm volatile (" int $0x04 ");

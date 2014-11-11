@@ -84,6 +84,7 @@ _start:
 	# To set up a stack, we simply set the esp register to point to the
 	# top of
 	# our stack (as it grows downwards).
+	cli
 	lgdt fake_gdt
 	
 	movw $0x10, %ax

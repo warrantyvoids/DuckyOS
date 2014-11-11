@@ -10,4 +10,6 @@ CSRCS +=	arch/i686/irq.c \
 		arch/i686/arch.c \
 		arch/i686/pic.c \
 		arch/i686/pit.c \
-		arch/i686/apic.c
+		arch/i686/apic.c \
+		arch/i686/drv/i8042.c \
+		arch/i686/drv/pci/pci.c

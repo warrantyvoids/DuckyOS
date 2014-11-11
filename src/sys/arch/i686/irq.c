@@ -23,12 +23,22 @@ void isr_handler(isr_args_t args) {
   }
 }
 
-void irq_handler(isr_args_t args) {
-//  if (args.interrupt_id >=  IRQ8 )
-//    outb( PIC2_CMD , PIC_CMD_RESET );
+//PIC handler
+void irq_handler_pic(isr_args_t args) {
+  if (args.interrupt_id >=  IRQ8 )
+    outb( PIC2_CMD , PIC_CMD_RESET );
     
-//  outb( PIC1_CMD, PIC_CMD_RESET );
+  outb( PIC1_CMD, PIC_CMD_RESET );
   
+  if (handlers[args.interrupt_id]) {
+    handlers[args.interrupt_id](args);
+  } else {
+    unhandled_interrupt(args);
+  }
+}
+
+//APIC handler
+void irq_handler_apic(isr_args_t args) {
   if (handlers[args.interrupt_id]) {
     handlers[args.interrupt_id](args);
   } else {
@@ -38,4 +48,3 @@ void irq_handler(isr_args_t args) {
 //  apic_send_eoi( );
   
 }
-  

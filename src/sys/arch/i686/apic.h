@@ -194,5 +194,11 @@ typedef volatile struct {
            
 } __attribute__((packed)) local_apic_t;
 
+enum {
+  APIC_TIMER_ONESHOT = 0b00,
+  APIC_TIMER_PERIODIC = 0b01,
+  APIC_TIMER_DEADLINE = 0b10
+};
+
 
 #endif
