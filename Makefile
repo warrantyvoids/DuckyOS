@@ -19,10 +19,14 @@ all: toolchain VOS.iso
 
 $(IMGNAME): img/boot/VOS.bin
 	tools/grub-$(ARCH)/grub-mkrescue -o $(IMGNAME) img/
+	
+VOS.img:
+	qemu-img create -f qcow2 VOS.img 2G
   
 img/boot/VOS.bin: src/sys/VOS.bin
 	cp src/sys/VOS.bin img/boot/VOS.bin
 
+.PHONY: src/sys/VOS.bin
 src/sys/VOS.bin:
 	cd src/sys/; make image
 
@@ -45,8 +49,11 @@ clean: toolchain-clean
 	rm -rf doc/html doc/latex doc/man
 	cd src/sys/; make clean
 
-simulate: $(IMGNAME)
-	qemu-system-i386 -cdrom $(IMGNAME) -s -smp 2
+mkdiskimage: VOS.img
+	
+
+simulate: $(IMGNAME) VOS.img
+	qemu-system-x86_64 -cdrom $(IMGNAME) -s -smp 2 -soundhw ac97 -drive file=VOS.img,index=0,media=disk,if=sd
 
 buildkernel:
 	cd src/sys; make all;
