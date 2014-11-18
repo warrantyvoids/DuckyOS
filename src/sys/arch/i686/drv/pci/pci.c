@@ -61,7 +61,11 @@ static void scan_pci_bus(uint8_t busid) {
       value = read_pci_config(busid, devid, func, 0xC);
       descr.header_type = (value >> 16) & 0xFF;
       
-    
+      terminal_writestring(pHex);
+      terminal_writehexdigits( busid );
+      terminal_writestring(pHex);
+      terminal_writehexdigits( devid );
+      
       terminal_writestring(pHex);
       terminal_writehexdigits( descr.vendor_id >> 8 );
       terminal_writehexdigits( descr.vendor_id & 0xFF );
@@ -103,7 +107,7 @@ static void scan_pci_bus(uint8_t busid) {
 
 void pci_init() {
     
-  terminal_writestring("  vendID  devID   clas  scls  htype\n");
+  terminal_writestring(" busID nDev vendID  devID   clas  scls  htype\n");
   for (uint8_t busid = 0; busid < 0xFF; busid++)
     scan_pci_bus(busid);
 }
