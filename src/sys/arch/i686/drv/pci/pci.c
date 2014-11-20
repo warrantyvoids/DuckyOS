@@ -31,10 +31,7 @@ static void scan_pci_bus(uint8_t busid) {
   uint8_t devid = 0;
   pci_descriptor_t descr;
   
-  //terminal_writestring("Scanning ");
-  //terminal_writehexdigits(busid);
-  //terminal_putchar('\n');
-  //terminal_writestring("  vendID  devID   clas  scls  htype\n");
+  terminal_writestring("bus  vendID  devID   clas  scls  htype\n");
   char* pHex = "  0x";
   
   while (devid < 0x20) {
