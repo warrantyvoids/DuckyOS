@@ -1,0 +1,1 @@
+add_library( arch_i686_drv STATIC i8042.c pci/pci.c )
