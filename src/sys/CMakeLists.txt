@@ -32,6 +32,8 @@ add_dependencies( DuckyOS.bin
 if(DuckyOS_ARCH STREQUAL "i686")
   add_subdirectory( arch/i686 )
   target_link_libraries( DuckyOS.bin arch_i686 )
+  find_program( QEMU qemu-system-x86 )
+
 endif()
 
 

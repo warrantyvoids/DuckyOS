@@ -86,7 +86,7 @@ if ( DuckyOS_ARCH STREQUAL "i686" OR DuckyOS_ARCH STREQUAL "amd64" )
     PARENT_SCOPE )
 
    set ( DuckyOS_MKIMAGE
-    "${CMAKE_CURRENT_BINARY_DIR}/grub-${DuckyOS_ARCH}/grub-mkimage"
+    "${CMAKE_CURRENT_BINARY_DIR}/grub-${DuckyOS_ARCH}/grub-mkrescue"
     PARENT_SCOPE )
 
 endif()
