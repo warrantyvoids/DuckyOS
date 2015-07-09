@@ -25,9 +25,9 @@ list ( APPEND DuckyOS_KERNEL_SRCS kernel.c terminal.c keyboard.c )
 
 add_executable( DuckyOS.bin ${DuckyOS_KERNEL_SRCS} )
 set_target_properties( DuckyOS.bin PROPERTIES LINK_FLAGS "-T ${CMAKE_CURRENT_SOURCE_DIR}/kernel.ld" )
-add_dependencies( DuckyOS.bin
-  "${CMAKE_BINARY_DIR}/tools/binutils-${DuckyOS_ARCH}/bin/${DuckyOS_ARCH}-elf-ld"
-  "${CMAKE_BINARY_DIR}/tools/grub-${DuckyOS_ARCH}/grub-mkrescue" )
+add_dependencies( DuckyOS.bin tools )
+#  "${CMAKE_BINARY_DIR}/tools/binutils-${DuckyOS_ARCH}/bin/${DuckyOS_ARCH}-elf-ld"
+#  "${CMAKE_BINARY_DIR}/tools/grub-${DuckyOS_ARCH}/grub-mkrescue" )
 
 if(DuckyOS_ARCH STREQUAL "i686")
   add_subdirectory( arch/i686 )

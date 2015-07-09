@@ -12,13 +12,13 @@ endif()
 add_subdirectory( src )
 
 file( MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/img/boot/grub )
-file( COPY ${CMAKE_CURRENT_BINARY_DIR}/src/sys/DuckyOS.bin
-	DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/img/boot )
 file( COPY ${CMAKE_CURRENT_SOURCE_DIR}/img/boot/grub/grub.cfg
 	DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/img/boot/grub )
 
 add_custom_target( image DEPENDS DuckyOS.iso )
-message ( info ${DuckyOS_MKIMAGE} )
+add_custom_command( OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/img/boot/DuckyOS.bin
+  COMMAND cp "${CMAKE_CURRENT_BINARY_DIR}/src/sys/DuckyOS.bin" "${CMAKE_CURRRENT_BINARY_DIR}/img/boot/DuckyOS.bin"
+  DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/src/sys/DuckyOS.bin)
 add_custom_command( OUTPUT DuckyOS.iso 
   COMMAND ${DuckyOS_MKIMAGE} "-o" "DuckyOS.iso" "${CMAKE_CURRENT_BINARY_DIR}/img"
   DEPENDS  ${CMAKE_CURRENT_BINARY_DIR}/img/boot/grub
